@@ -97,8 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				E10109972C0DF07B002FF84B /* ChallengoApp.swift */,
-				E10109992C0DF07B002FF84B /* ContentView.swift */,
 				E101099B2C0DF07B002FF84B /* Item.swift */,
+				E11F7C172C0DFC81006CA138 /* Models */,
+				E11F7C132C0DFA55006CA138 /* Views */,
+				E11F7C192C0DFCA4006CA138 /* Utils */,
 				E101099D2C0DF07C002FF84B /* Assets.xcassets */,
 				E101099F2C0DF07C002FF84B /* Preview Content */,
 			);
@@ -128,6 +130,28 @@
 				E10109B62C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift */,
 			);
 			path = ChallengoUITests;
+			sourceTree = "<group>";
+		};
+		E11F7C132C0DFA55006CA138 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E10109992C0DF07B002FF84B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E11F7C172C0DFC81006CA138 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E11F7C192C0DFCA4006CA138 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
