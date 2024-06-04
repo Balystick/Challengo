@@ -18,6 +18,10 @@
 		E11F7C1B2C0E0190006CA138 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1A2C0E0190006CA138 /* data.swift */; };
 		E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1C2C0E01E4006CA138 /* utils.swift */; };
 		E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222B432C0F124F004F3E5E /* WheelView.swift */; };
+		E1ECCF802C0F57A400FAE9D7 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */; };
+		E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */; };
+		E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */; };
+		E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		E11F7C1A2C0E0190006CA138 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		E11F7C1C2C0E01E4006CA138 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		E1222B432C0F124F004F3E5E /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
+		E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingBalanceExtractedView.swift; sourceTree = "<group>"; };
+		E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingCalendarExtractedView.swift; sourceTree = "<group>"; };
+		E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingWinFailExtractedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,10 @@
 			children = (
 				E10109992C0DF07B002FF84B /* ContentView.swift */,
 				E1222B432C0F124F004F3E5E /* WheelView.swift */,
+				E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */,
+				E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */,
+				E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */,
+				E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,11 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1ECCF802C0F57A400FAE9D7 /* TrackingView.swift in Sources */,
 				E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */,
+				E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */,
 				E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */,
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
 				E101099C2C0DF07B002FF84B /* Item.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
+				E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */,
+				E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */,
 				E11F7C1B2C0E0190006CA138 /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
