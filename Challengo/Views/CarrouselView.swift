@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct Card: Identifiable {
     var id: Int
     var num: Int

@@ -11,6 +11,8 @@ struct WheelView: View {
     @State private var rotationAngle: Double = 0
     @State private var isAnimating = false
     @State private var SelectedSection: Int?
+    @State private var showModal = false
+    
     let sections = 8 // Nombre de sections de la roue
     let rotationDuration: Double = 4.0 // Durée de l'animation en secondes
     var result: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
@@ -38,23 +40,25 @@ struct WheelView: View {
                         .cornerRadius(10)
                 }
                 .padding()
-                
             }
             Image("pointeur")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
                 .offset(x: -115, y: -330)
-           
-            // Affichage du résultat (temporaire)
-            if let SelectedSection = SelectedSection {
-                Text(result[SelectedSection])
-                    .padding()
-                    .offset(x: 0, y: 300)
+        }
+        .sheet(isPresented: $showModal) {
+            // Passage du paramètre à effectuer : CarrouselView(selectedChallenge: SelectedSection)
+            CarrouselView()
+        }
+        .onChange(of: SelectedSection) {
+            // Délai avant l'affichage de la modale
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                showModal = true
             }
         }
     }
-
+    
     func spinWheel() {
         let fullRotation = 360.0
         // Définit un nombre de tours aléatoire (3 ou 4)
@@ -63,7 +67,7 @@ struct WheelView: View {
         // Ajoute une rotation supplémentaire aléatoire
         let additionalRotation = Double.random(in: 0..<Double(sections)) * (fullRotation / Double(sections))
         let totalRotation = randomRotation + additionalRotation
-
+        
         // Démarre l'animation de la roue
         withAnimation {
             rotationAngle += totalRotation
