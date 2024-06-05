@@ -20,7 +20,7 @@ struct TrackingView: View {
             }
             .pickerStyle(.segmented)
             .colorMultiply(.raspberry)
-            .padding([.leading, .trailing], 10)
+            .padding(.bottom, 30)
 
             switch segmentedSelection {
             case 0:
@@ -34,6 +34,8 @@ struct TrackingView: View {
             }
             Spacer()
         }
+        .padding([.leading, .trailing], 10)
+
     }
 }
 
