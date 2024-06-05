@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742263162C0F15CF009AC256 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263152C0F15CF009AC256 /* CongratsView.swift */; };
+		742263182C0F15F1009AC256 /* CarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263172C0F15F1009AC256 /* CarrouselView.swift */; };
+		7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263192C0F1612009AC256 /* AcceptedChallengeView.swift */; };
 		E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109972C0DF07B002FF84B /* ChallengoApp.swift */; };
 		E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109992C0DF07B002FF84B /* ContentView.swift */; };
 		E101099C2C0DF07B002FF84B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101099B2C0DF07B002FF84B /* Item.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		742263152C0F15CF009AC256 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		742263172C0F15F1009AC256 /* CarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselView.swift; sourceTree = "<group>"; };
+		742263192C0F1612009AC256 /* AcceptedChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedChallengeView.swift; sourceTree = "<group>"; };
 		E10109942C0DF07B002FF84B /* Challengo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challengo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10109972C0DF07B002FF84B /* ChallengoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengoApp.swift; sourceTree = "<group>"; };
 		E10109992C0DF07B002FF84B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				E10109992C0DF07B002FF84B /* ContentView.swift */,
+				742263152C0F15CF009AC256 /* CongratsView.swift */,
+				742263172C0F15F1009AC256 /* CarrouselView.swift */,
+				742263192C0F1612009AC256 /* AcceptedChallengeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742263182C0F15F1009AC256 /* CarrouselView.swift in Sources */,
 				E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */,
+				742263162C0F15CF009AC256 /* CongratsView.swift in Sources */,
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
 				E101099C2C0DF07B002FF84B /* Item.swift in Sources */,
+				7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
 				E11F7C1B2C0E0190006CA138 /* data.swift in Sources */,
 			);
