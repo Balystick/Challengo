@@ -35,9 +35,13 @@ struct WheelView: View {
                 Button(action: spinWheel) {
                     Text("Tourner la roue")
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .foregroundColor(.black)
+                        .background(Color(red: 0.77, green: 0.76, blue: 0.761))                        .foregroundColor(.white)
+                        .cornerRadius(30)
+                        .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.red, lineWidth: 1)
+                                )
                 }
                 .padding()
             }
