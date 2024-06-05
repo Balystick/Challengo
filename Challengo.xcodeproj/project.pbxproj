@@ -22,6 +22,7 @@
 		E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */; };
 		E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */; };
 		E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */; };
+		E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingBalanceExtractedView.swift; sourceTree = "<group>"; };
 		E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingCalendarExtractedView.swift; sourceTree = "<group>"; };
 		E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingWinFailExtractedView.swift; sourceTree = "<group>"; };
+		E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureGrowthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				E10109992C0DF07B002FF84B /* ContentView.swift */,
 				E1222B432C0F124F004F3E5E /* WheelView.swift */,
+				E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */,
 				E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */,
 				E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */,
 				E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */,
@@ -312,6 +315,7 @@
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
 				E101099C2C0DF07B002FF84B /* Item.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
+				E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */,
 				E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */,
 				E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */,
 				E11F7C1B2C0E0190006CA138 /* data.swift in Sources */,
