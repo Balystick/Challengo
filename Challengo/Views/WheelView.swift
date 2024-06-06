@@ -63,8 +63,7 @@ struct WheelView: View {
                 }
             }
             }
-        }
-    
+        
     
     func spinWheel() {
         let fullRotation = 360.0
