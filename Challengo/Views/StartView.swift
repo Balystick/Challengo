@@ -12,16 +12,16 @@ struct StartView: View {
     @State private var navigateToOnboardingView1 = false
     @State private var navigateToWheelView = false
     
-    var backButton: some View {
-          Button(action: {
-              // Action à effectuer lors du retour
-              // Par exemple, pour revenir à la vue précédente :
-              navigateToCalendarView = false
-          }) {
-              Image(systemName: "arrow.left")
-                  .foregroundColor(Color.black)
-          }
-      }
+//    var backButton: some View {
+//          Button(action: {
+//              // Action à effectuer lors du retour
+//              // Par exemple, pour revenir à la vue précédente :
+//              navigateToCalendarView = false
+//          }) {
+//              Image(systemName: "arrow.left")
+//                  .foregroundColor(Color.black)
+//          }
+//      }
     
     var body: some View {
         NavigationStack {
@@ -76,13 +76,14 @@ struct StartView: View {
                     Spacer()
                 }
             }
+            .navigationBarHidden(true)
             .navigationDestination(isPresented: $navigateToOnboardingView1) {
                 OnboardingView1()
                 .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $navigateToCalendarView) {
                 TrackingView()
-                .navigationBarItems(leading: backButton)
+//                .navigationBarItems(leading: backButton)
                 .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $navigateToWheelView) {

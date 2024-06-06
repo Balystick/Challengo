@@ -35,7 +35,7 @@ struct TrackingView: View {
             Spacer()
         }
         .padding([.leading, .trailing], 10)
-
+        .navigationBarHidden(true)
     }
 }
 
