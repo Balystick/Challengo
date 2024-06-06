@@ -27,7 +27,7 @@ class Challenge: ObservableObject {
     
     let descriptions: [String] = ["Votre défi aujourd’hui est de prendre une douche froide pendant 3 minutes", "Votre défi aujourd’hui est de méditer pendant 20mn", "Votre défi aujourd’hui est de vous coucher avant 22h"]
     
-    let arbres: [String] = ["arbre1", "arbre2", "arbre3"]
+    let arbres: [String] = ["lac1", "arbre2", "fleurs1"]
     
     init() {
         items = []
@@ -106,7 +106,7 @@ struct CarrouselView: View {
                             Spacer()
                                 Image(item.arbre)
                                 .resizable()
-                                .frame(width: 70.0, height:70.0)
+                                .frame(width: 200.0, height: 200.0)
                             Spacer()
                             Button(action: {}, label: {
                                 Text("Choisir")

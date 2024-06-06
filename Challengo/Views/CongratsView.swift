@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CongratsView: View {
+    @State private var isPressed = false
+
+    
     var body: some View {
         ZStack {
         
@@ -23,6 +26,14 @@ struct CongratsView: View {
                 Image("arbre1")
                     .resizable()
                     .frame(width: 30.0, height: 30.0)
+                    .scaleEffect(isPressed ? 1.0 : 2.0)
+                    .animation(.easeInOut, value: isPressed)
+                    .gesture(
+                                TapGesture()
+                                    .onEnded({
+                                        self.isPressed.toggle()
+                                    })
+                                )
                 Spacer()
                 Spacer()
                 Spacer()
