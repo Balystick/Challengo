@@ -11,7 +11,11 @@ struct StartView: View {
     @State private var navigateToCalendarView = false
     @State private var navigateToOnboardingView1 = false
     @State private var navigateToWheelView = false
-    
+    @State private var navigateToNatureGrowthView = false
+    @State static var selectedSection = -1
+    @State static var challengeNumber = 3
+
+
 //    var backButton: some View {
 //          Button(action: {
 //              // Action à effectuer lors du retour
@@ -24,7 +28,6 @@ struct StartView: View {
 //      }
     
     var body: some View {
-        NavigationStack {
             ZStack {
                 Image("Valley")
                     .resizable()
@@ -35,6 +38,9 @@ struct StartView: View {
                              .onEnded { value in
                                  if value.translation.width < -50 {
                                      navigateToWheelView = true
+                                 }
+                                 if value.translation.width > 50 {
+                                     navigateToNatureGrowthView = true
                                  }
                              }
                      )
@@ -90,10 +96,12 @@ struct StartView: View {
                 WheelView()
                 .navigationBarBackButtonHidden(true)
             }
+            .navigationDestination(isPresented: $navigateToNatureGrowthView) {
+                NatureGrowthView(selectedSection: -1, challengeNumber: StartView.$challengeNumber)
+            }
             .navigationBarHidden(true)
         }
     }
-}
 
 #Preview {
     StartView()

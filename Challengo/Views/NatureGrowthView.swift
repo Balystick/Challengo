@@ -16,6 +16,7 @@ struct NatureItem: Identifiable {
 }
 
 struct NatureGrowthView: View {
+    @State private var navigateToStartView = false
     @State var offset: CGSize = .zero
     @State private var startLocation: CGSize = .zero
     // Collection d'items gagnés précédemment
@@ -27,10 +28,18 @@ struct NatureGrowthView: View {
         NatureItem(position: CGSize(width: 250, height: 150), imageName: "nuage1"),
         NatureItem(position: CGSize(width: 300, height: 150), imageName: "nuage1"),
         NatureItem(position: CGSize(width: 350, height: 150), imageName: "nuage1"),
-        NatureItem(position: CGSize(width: 400, height: 750), imageName: "tree.fill") // Ajout du nouvel élément gagné
+        NatureItem(position: CGSize(width: 400, height: 400), imageName: "onSenFout") // Ajout du nouvel élément gagné
     ]
-    
     let darkGreen = Color(red: 34/255, green: 139/255, blue: 34/255)
+    var selectedSection: Int?
+    @Binding var challengeNumber: Int
+    let challenge = Challenge()
+    @State private var isCompleted = false
+    @State private var isFailed = false
+    @State private var isCongratulated = false
+    
+    // Créer une classe si on a le temps
+    var categories: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
     
     var body: some View {
         ZStack {
@@ -48,10 +57,87 @@ struct NatureGrowthView: View {
                         .foregroundColor(darkGreen)
                         .position(x: item.position.width, y: item.position.height)
                 }
+
+
+                // Affichage du Challenge en cours
+                if !isCompleted && !isFailed && selectedSection != -1 {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30.0)
+                            .fill(Color.red)
+                            .opacity(0.7)
+                            .frame(width: 200.0, height: 220.0)
+                        VStack {
+                            Text("Challenge \(categories[selectedSection ?? -1])")
+                                .font(.headline)
+                                .padding(.top, 20)
+                            Text(challenge.items[challengeNumber-1].description)                                    .font(.footnote)
+                                .padding(.vertical, 10)
+                            HStack {
+                                Button(action: {
+                                    isCompleted = true
+                                }, label: {
+                                    Text("Accompli")
+                                        .font(.footnote)
+                                        .padding(7)
+                                })
+                                .foregroundColor(.black)
+                                .background(Color(red: 0.77, green: 0.76, blue: 0.761))
+                                .cornerRadius(20)
+                                
+                                Button(action: {
+                                    isFailed = true                            }, label: {
+                                        Text("Échoué")
+                                            .font(.footnote)
+                                            .padding(7)
+                                    })
+                                .foregroundColor(.black)
+                                .background(Color(red: 0.77, green: 0.76, blue: 0.761))
+                                .cornerRadius(20)
+                            }
+                        }
+                        .frame(width: 180, height: 200)
+                    }
+                    .offset(x: 0, y: -250)
+                    VStack {
+                        Text("Vous gagnerez :")
+                            .font(.headline)
+                            .padding()
+                            .frame(width: 200)
+                        Image(challenge.items[challengeNumber-1].arbre)
+                            .resizable()
+                            .frame(width: 70.0, height:70.0)
+                    }
+                    .offset(x: 0, y: -70)
+                }
+                
+                // Affichage des félicitations
+                if isCompleted && !isCongratulated {
+                    Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nDépose ton nouvel item avec soin :")
+                        .offset(x: 0, y: -120)
+                        .frame(width: 350)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                isCongratulated = true
+                            }
+                        }
+                }
+                
+                // Affichage des condoléances
+                if isFailed && !isCongratulated {
+                    Text("Ne vous découragez pas, chaque échec est une opportunité d’apprendre.\nRelevez le prochain défi et continuer à avancer ! 🌟")
+                        .offset(x: 0, y: -150)
+                        .frame(width: 350)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                isCongratulated = true
+                                navigateToStartView = true
+                            }
+                        }
+                }
                 
                 // Affichage du nouvel item draggable
-                if item.id == items[items.count-1].id  {
-                    Image(systemName: "tree.fill")
+                if isCompleted && item.id == items[items.count-1].id  {
+                    Image(challenge.items[challengeNumber-1].arbre)
                         .resizable()
                         .frame(width: 75, height: 75)
                         .foregroundColor(darkGreen)
@@ -69,15 +155,37 @@ struct NatureGrowthView: View {
                                     items[items.count-1].position = self.offset
                                 }
                         )
+                    // Affichage du bouton de validation position item
+                    VStack {
+                                    Spacer()
+                                    HStack {
+                                        Spacer()
+                                        Button(action: {
+                                            navigateToStartView = true
+                                        }) {
+                                            Image(systemName: "checkmark")
+                                                    .foregroundColor(.white)
+                                                    .padding()
+                                                    .background(Color.blue)
+                                                    .clipShape(Circle())
+                                                    .shadow(radius: 5)
+                                        }
+                                        .padding(.trailing, 50)
+                                    }
+                                }
                 }
             }
         }
+        .navigationDestination(isPresented: $navigateToStartView) {
+            StartView()
+        }
     }
 }
-    
+
 struct NatureGrowthView_Previews: PreviewProvider {
+    @State static var challengeNumber = 3
     static var previews: some View {
-        NatureGrowthView()
+        NatureGrowthView(selectedSection: 2, challengeNumber: $challengeNumber)
     }
 }
-    
+

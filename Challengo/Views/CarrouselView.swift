@@ -46,21 +46,35 @@ struct CarrouselView: View {
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State var activeIndex: Int = 0
+    //Passage du challenge accepté à la vue mère
+    @Binding var challengeAccepted: Bool
+    var selectedSection: Int?
+    @Binding var challengeNumber: Int
+    // Créer une classe si on a le temps
+    var categories: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
 
     var body: some View {
      
         VStack {
             ZStack {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                         } label: {
-                    Image(systemName: "xmark.circle")
-                        .font(.largeTitle)
-                        .foregroundColor(.gray)
-                         }
-                         .frame(alignment: .topTrailing)
-                                 .padding()
-                                 .font(.title)
+                VStack {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.largeTitle)
+                            .foregroundColor(.gray)
+                    }
+                    .frame(alignment: .topTrailing)
+//                    .padding()
+                    .font(.title)
+                    Text("Challenges \(categories[selectedSection ?? -1])")
+                        .font(.title3)
+                        
+                        .fontWeight(.bold)
+                        .frame(height: 50)
+
+                }
                    }
             
         
@@ -107,6 +121,9 @@ struct CarrouselView: View {
                                 .frame(width: 70.0, height:70.0)
                             Spacer()
                             Button(action: {
+                                // Passage du challenge accepté à la vue mère
+                                challengeAccepted = true
+                                challengeNumber = item.num
                                 dismiss()
                             }, label: {
                                 Text("Choisir")
@@ -177,6 +194,12 @@ struct CarrouselView: View {
     }
 }
 
-#Preview {
-    CarrouselView()
+// Ajustement Preview
+struct CarrouselView_Previews: PreviewProvider {
+    @State static var challengeAccepted = true
+    @State static var selectedSection = 3
+    @State static var challengeNumber = 3
+    static var previews: some View {
+        CarrouselView(challengeAccepted: $challengeAccepted, selectedSection: selectedSection, challengeNumber: $challengeNumber)
+    }
 }
