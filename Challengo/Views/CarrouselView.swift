@@ -106,7 +106,9 @@ struct CarrouselView: View {
                                 .resizable()
                                 .frame(width: 70.0, height:70.0)
                             Spacer()
-                            Button(action: {}, label: {
+                            Button(action: {
+                                dismiss()
+                            }, label: {
                                 Text("Choisir")
                                     .font(.footnote)
                                     .foregroundColor(Color.black)

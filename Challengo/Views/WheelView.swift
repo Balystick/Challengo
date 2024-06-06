@@ -11,57 +11,60 @@ struct WheelView: View {
     @State private var rotationAngle: Double = 0
     @State private var isAnimating = false
     @State private var SelectedSection: Int?
-    @State private var showModal = false
+    @State private var showCarrouselView = false
+    @State private var navigateToAcceptedChallengeView = false
     
     let sections = 8 // Nombre de sections de la roue
     let rotationDuration: Double = 4.0 // Durée de l'animation en secondes
     var result: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
     
     var body: some View {
-        ZStack {
-            Image("Valley")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
-            VStack {
-                Image("roue")
+            ZStack {
+                Image("Valley")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                VStack {
+                    Image("roue")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 350)
+                        .rotationEffect(.degrees(rotationAngle))
+                        .animation(isAnimating ? .easeOut(duration: rotationDuration) : .none, value: rotationAngle)
+                        .offset(x: 0, y: -135)
+                    
+                    Button(action: spinWheel) {
+                        Text("Tourner la roue")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color(red: 0.77, green: 0.76, blue: 0.761))                        .foregroundColor(.white)
+                            .cornerRadius(30)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.red, lineWidth: 1)
+                            )
+                    }
+                    .padding()
+                }
+                Image("pointeur")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 350)
-                    .rotationEffect(.degrees(rotationAngle))
-                    .animation(isAnimating ? .easeOut(duration: rotationDuration) : .none, value: rotationAngle)
-                    .offset(x: 0, y: -135)
-                
-                Button(action: spinWheel) {
-                    Text("Tourner la roue")
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color(red: 0.77, green: 0.76, blue: 0.761))                        .foregroundColor(.white)
-                        .cornerRadius(30)
-                        .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.red, lineWidth: 1)
-                                )
+                    .frame(width: 50, height: 50)
+                    .offset(x: -115, y: -330)
+            }
+            .sheet(isPresented: $showCarrouselView) {
+                // Passage du paramètre à effectuer : CarrouselView(selectedChallenge: SelectedSection)
+                CarrouselView()
+            }
+            .onChange(of: SelectedSection) {
+                // Délai avant l'affichage de la modale
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    showCarrouselView = true
                 }
-                .padding()
             }
-            Image("pointeur")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .offset(x: -115, y: -330)
-        }
-        .sheet(isPresented: $showModal) {
-            // Passage du paramètre à effectuer : CarrouselView(selectedChallenge: SelectedSection)
-            CarrouselView()
-        }
-        .onChange(of: SelectedSection) {
-            // Délai avant l'affichage de la modale
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                showModal = true
             }
         }
-    }
+    
     
     func spinWheel() {
         let fullRotation = 360.0
