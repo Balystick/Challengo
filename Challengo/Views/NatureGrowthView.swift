@@ -20,14 +20,14 @@ struct NatureGrowthView: View {
     @State private var startLocation: CGSize = .zero
     // Collection d'items gagnés précédemment
     @State private var items: [NatureItem] = [
-        NatureItem(position: CGSize(width: 50, height: 50), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 100, height: 150), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 150, height: 250), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 200, height: 350), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 250, height: 450), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 300, height: 550), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 350, height: 650), imageName: "leaf.fill"),
-        NatureItem(position: CGSize(width: 400, height: 750), imageName: "tree.fill") // Ajout de l'arbre ici
+        NatureItem(position: CGSize(width: 50, height: 50), imageName: "sun1"),
+        NatureItem(position: CGSize(width: 100, height: 100), imageName: "nuage1"),
+        NatureItem(position: CGSize(width: 150, height: 150), imageName: "nuage5"),
+        NatureItem(position: CGSize(width: 200, height: 150), imageName: "nuage1"),
+        NatureItem(position: CGSize(width: 250, height: 150), imageName: "nuage1"),
+        NatureItem(position: CGSize(width: 300, height: 150), imageName: "nuage1"),
+        NatureItem(position: CGSize(width: 350, height: 150), imageName: "nuage1"),
+        NatureItem(position: CGSize(width: 400, height: 750), imageName: "tree.fill") // Ajout du nouvel élément gagné
     ]
     
     let darkGreen = Color(red: 34/255, green: 139/255, blue: 34/255)
@@ -42,7 +42,7 @@ struct NatureGrowthView: View {
             // Affichage des items gagnés précédemment
             ForEach(items) { item in
                 if !items.isEmpty && item.id != items[items.count-1].id {
-                    Image(systemName: item.imageName)
+                    Image(item.imageName)
                         .resizable()
                         .frame(width: 50, height: 50)
                         .foregroundColor(darkGreen)
@@ -51,15 +51,12 @@ struct NatureGrowthView: View {
                 
                 // Affichage du nouvel item draggable
                 if item.id == items[items.count-1].id  {
-                    //Test Mise à jour coordonnées dans collection
-                    Text("(\(Int(items[items.count-1].position.width)), \(Int(items[items.count-1].position.height)))")
-                        .offset(x: 100, y: 200)
-                    // Fin du test
                     Image(systemName: "tree.fill")
                         .resizable()
                         .frame(width: 75, height: 75)
                         .foregroundColor(darkGreen)
-                        .offset(x: offset.width, y: offset.height)                .gesture(
+                        .offset(x: offset.width, y: offset.height)
+                        .gesture(
                             DragGesture ()
                                 .onChanged { gesture in
                                     withAnimation(.spring()) {

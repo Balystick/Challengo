@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 // Extension UserDefaults pour gérer le flag de premier lancement
 extension UserDefaults {
@@ -25,6 +24,7 @@ extension UserDefaults {
 }
 
 struct ContentView: View {
+<<<<<<< HEAD
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
@@ -41,10 +41,14 @@ struct ContentView: View {
         } else {
             StartView()
         }
+=======
+    
+    var body: some View {
+        Text("Hello")
+>>>>>>> dev
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

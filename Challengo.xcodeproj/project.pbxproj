@@ -12,12 +12,8 @@
 		7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263192C0F1612009AC256 /* AcceptedChallengeView.swift */; };
 		E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109972C0DF07B002FF84B /* ChallengoApp.swift */; };
 		E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109992C0DF07B002FF84B /* ContentView.swift */; };
-		E101099C2C0DF07B002FF84B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101099B2C0DF07B002FF84B /* Item.swift */; };
 		E101099E2C0DF07C002FF84B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E101099D2C0DF07C002FF84B /* Assets.xcassets */; };
 		E10109A12C0DF07C002FF84B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10109A02C0DF07C002FF84B /* Preview Assets.xcassets */; };
-		E10109AB2C0DF07C002FF84B /* ChallengoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109AA2C0DF07C002FF84B /* ChallengoTests.swift */; };
-		E10109B52C0DF07C002FF84B /* ChallengoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109B42C0DF07C002FF84B /* ChallengoUITests.swift */; };
-		E10109B72C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10109B62C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift */; };
 		E11F7C1B2C0E0190006CA138 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1A2C0E0190006CA138 /* data.swift */; };
 		E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1C2C0E01E4006CA138 /* utils.swift */; };
 		E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222B432C0F124F004F3E5E /* WheelView.swift */; };
@@ -59,14 +55,10 @@
 		E10109942C0DF07B002FF84B /* Challengo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challengo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10109972C0DF07B002FF84B /* ChallengoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengoApp.swift; sourceTree = "<group>"; };
 		E10109992C0DF07B002FF84B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E101099B2C0DF07B002FF84B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E101099D2C0DF07C002FF84B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10109A02C0DF07C002FF84B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E10109A62C0DF07C002FF84B /* ChallengoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E10109AA2C0DF07C002FF84B /* ChallengoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengoTests.swift; sourceTree = "<group>"; };
 		E10109B02C0DF07C002FF84B /* ChallengoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E10109B42C0DF07C002FF84B /* ChallengoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengoUITests.swift; sourceTree = "<group>"; };
-		E10109B62C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E11F7C1A2C0E0190006CA138 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		E11F7C1C2C0E01E4006CA138 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		E1222B432C0F124F004F3E5E /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
@@ -113,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				E10109962C0DF07B002FF84B /* Challengo */,
-				E10109A92C0DF07C002FF84B /* ChallengoTests */,
-				E10109B32C0DF07C002FF84B /* ChallengoUITests */,
 				E10109952C0DF07B002FF84B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				E10109972C0DF07B002FF84B /* ChallengoApp.swift */,
-				E101099B2C0DF07B002FF84B /* Item.swift */,
 				E11F7C172C0DFC81006CA138 /* Models */,
 				E11F7C132C0DFA55006CA138 /* Views */,
 				E11F7C192C0DFCA4006CA138 /* Utils */,
@@ -149,23 +138,6 @@
 				E10109A02C0DF07C002FF84B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E10109A92C0DF07C002FF84B /* ChallengoTests */ = {
-			isa = PBXGroup;
-			children = (
-				E10109AA2C0DF07C002FF84B /* ChallengoTests.swift */,
-			);
-			path = ChallengoTests;
-			sourceTree = "<group>";
-		};
-		E10109B32C0DF07C002FF84B /* ChallengoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E10109B42C0DF07C002FF84B /* ChallengoUITests.swift */,
-				E10109B62C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift */,
-			);
-			path = ChallengoUITests;
 			sourceTree = "<group>";
 		};
 		E11F7C132C0DFA55006CA138 /* Views */ = {
@@ -346,7 +318,6 @@
 				742263162C0F15CF009AC256 /* CongratsView.swift in Sources */,
 				F6F367D22C11B23E00341F38 /* StartView.swift in Sources */,
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
-				E101099C2C0DF07B002FF84B /* Item.swift in Sources */,
 				7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
 				E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */,
@@ -366,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10109AB2C0DF07C002FF84B /* ChallengoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10109B72C0DF07C002FF84B /* ChallengoUITestsLaunchTests.swift in Sources */,
-				E10109B52C0DF07C002FF84B /* ChallengoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
