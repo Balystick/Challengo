@@ -10,7 +10,8 @@ import SwiftUI
 struct TrackingCalendarExtractedView: View {
     @State private var date = Date()
     @State private var completedDates: [Date] = [Date]() // Les dates accomplies
-
+    @State private var navigateToStartView = false
+    
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2024, month: 6, day: 10)
@@ -56,6 +57,9 @@ struct TrackingCalendarExtractedView: View {
                 Spacer()
             }
             .navigationBarHidden(true) // Cacher la barre de navigation par défaut
+            .navigationDestination(isPresented: $navigateToStartView) {
+                StartView() // Retourner à la vue StartView lorsque la variable navigateToStartView est vraie
+            }
         }
     }
     

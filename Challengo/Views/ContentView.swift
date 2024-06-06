@@ -9,8 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var isFirstTimeUser: Bool = true
+    
     var body: some View {
-        Text("Hello")
+        if isFirstTimeUser {
+            OnboardingView1()
+                .onAppear {
+                    UserDefaults.standard.set(true, forKey: "isFirstTimeUser")
+                }
+        } else {
+            StartView()
+        }
     }
 }
 

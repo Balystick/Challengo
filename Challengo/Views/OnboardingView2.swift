@@ -63,7 +63,7 @@ struct OnboardingView2: View {
                 .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $navigateToOnboardingView3) {
-                OnboardingView2()
+                OnboardingView3()
             }
             .navigationBarHidden(true)
         }
