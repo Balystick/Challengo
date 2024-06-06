@@ -22,6 +22,13 @@
 		E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */; };
 		E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */; };
 		E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */; };
+		F6F367D22C11B23E00341F38 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367D12C11B23E00341F38 /* StartView.swift */; };
+		F6F367D42C11B2FD00341F38 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367D32C11B2FD00341F38 /* OnboardingView1.swift */; };
+		F6F367D62C11B33700341F38 /* JustifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367D52C11B33700341F38 /* JustifiedTextView.swift */; };
+		F6F367D82C11B36800341F38 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367D72C11B36800341F38 /* OnboardingView2.swift */; };
+		F6F367DA2C11B39700341F38 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367D92C11B39700341F38 /* OnboardingView3.swift */; };
+		F6F367DC2C11B3C800341F38 /* OnboardingView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367DB2C11B3C800341F38 /* OnboardingView4.swift */; };
+		F6F367DE2C11B3ED00341F38 /* OnboardingView5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F367DD2C11B3ED00341F38 /* OnboardingView5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,13 @@
 		E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingCalendarExtractedView.swift; sourceTree = "<group>"; };
 		E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingWinFailExtractedView.swift; sourceTree = "<group>"; };
 		E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureGrowthView.swift; sourceTree = "<group>"; };
+		F6F367D12C11B23E00341F38 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F6F367D32C11B2FD00341F38 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
+		F6F367D52C11B33700341F38 /* JustifiedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifiedTextView.swift; sourceTree = "<group>"; };
+		F6F367D72C11B36800341F38 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
+		F6F367D92C11B39700341F38 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
+		F6F367DB2C11B3C800341F38 /* OnboardingView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView4.swift; sourceTree = "<group>"; };
+		F6F367DD2C11B3ED00341F38 /* OnboardingView5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E10109992C0DF07B002FF84B /* ContentView.swift */,
+				F6F367D12C11B23E00341F38 /* StartView.swift */,
 				742263152C0F15CF009AC256 /* CongratsView.swift */,
 				742263172C0F15F1009AC256 /* CarrouselView.swift */,
 				742263192C0F1612009AC256 /* AcceptedChallengeView.swift */,
@@ -139,6 +154,12 @@
 				E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */,
 				E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */,
 				E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */,
+				F6F367D32C11B2FD00341F38 /* OnboardingView1.swift */,
+				F6F367D72C11B36800341F38 /* OnboardingView2.swift */,
+				F6F367D92C11B39700341F38 /* OnboardingView3.swift */,
+				F6F367DB2C11B3C800341F38 /* OnboardingView4.swift */,
+				F6F367DD2C11B3ED00341F38 /* OnboardingView5.swift */,
+				F6F367D52C11B33700341F38 /* JustifiedTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,13 +316,20 @@
 				E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */,
 				E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */,
 				742263162C0F15CF009AC256 /* CongratsView.swift in Sources */,
+				F6F367D22C11B23E00341F38 /* StartView.swift in Sources */,
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
 				7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
 				E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */,
+				F6F367D62C11B33700341F38 /* JustifiedTextView.swift in Sources */,
+				F6F367DA2C11B39700341F38 /* OnboardingView3.swift in Sources */,
 				E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */,
 				E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */,
 				E11F7C1B2C0E0190006CA138 /* data.swift in Sources */,
+				F6F367D82C11B36800341F38 /* OnboardingView2.swift in Sources */,
+				F6F367DC2C11B3C800341F38 /* OnboardingView4.swift in Sources */,
+				F6F367D42C11B2FD00341F38 /* OnboardingView1.swift in Sources */,
+				F6F367DE2C11B3ED00341F38 /* OnboardingView5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
