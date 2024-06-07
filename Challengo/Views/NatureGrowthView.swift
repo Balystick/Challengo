@@ -37,6 +37,7 @@ struct NatureGrowthView: View {
     @State private var isCompleted = false
     @State private var isFailed = false
     @State private var isCongratulated = false
+    @State private var isMessageVisible = false
     
     // Créer une classe si on a le temps
     var categories: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
@@ -57,8 +58,8 @@ struct NatureGrowthView: View {
                         .foregroundColor(darkGreen)
                         .position(x: item.position.width, y: item.position.height)
                 }
-
-
+                
+                
                 // Affichage du Challenge en cours
                 if !isCompleted && !isFailed && selectedSection != -1 {
                     ZStack {
@@ -99,7 +100,7 @@ struct NatureGrowthView: View {
                     }
                     .offset(x: 0, y: -250)
                     VStack {
-                        Text("Vous gagnerez :")
+                        Text("Vous gagnez :")
                             .font(.headline)
                             .padding()
                             .frame(width: 200)
@@ -127,12 +128,22 @@ struct NatureGrowthView: View {
                     Text("Ne vous découragez pas, chaque échec est une opportunité d’apprendre.\nRelevez le prochain défi et continuer à avancer ! 🌟")
                         .offset(x: 0, y: -150)
                         .frame(width: 350)
+                        .transition(.slide)
                         .onAppear {
+                            withAnimation(.easeInOut) {
+                                isMessageVisible = true
+                            }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                 isCongratulated = true
                                 navigateToStartView = true
                             }
                         }
+                        .onDisappear {
+                            withAnimation(.easeInOut) {
+                                isMessageVisible = false
+                            }
+                        }
+                    
                 }
                 
                 // Affichage du nouvel item draggable
@@ -157,22 +168,22 @@ struct NatureGrowthView: View {
                         )
                     // Affichage du bouton de validation position item
                     VStack {
-                                    Spacer()
-                                    HStack {
-                                        Spacer()
-                                        Button(action: {
-                                            navigateToStartView = true
-                                        }) {
-                                            Image(systemName: "checkmark")
-                                                    .foregroundColor(.white)
-                                                    .padding()
-                                                    .background(Color.blue)
-                                                    .clipShape(Circle())
-                                                    .shadow(radius: 5)
-                                        }
-                                        .padding(.trailing, 50)
-                                    }
-                                }
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                navigateToStartView = true
+                            }) {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .clipShape(Circle())
+                                    .shadow(radius: 5)
+                            }
+                            .padding(.trailing, 50)
+                        }
+                    }
                 }
             }
         }
