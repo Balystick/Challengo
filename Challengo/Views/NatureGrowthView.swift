@@ -96,36 +96,39 @@ struct NatureGrowthView: View {
                 if !isCompleted && !isFailed && selectedSection != -1 {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30.0)
-                            .fill(Color.red)
+                            .fill(Color(.colorRose))
                             .opacity(0.7)
                             .frame(width: 200.0, height: 220.0)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.black, lineWidth: 1))
                         VStack {
-                            Text("Challenge \(categories[selectedSection ?? -1])")
+                            Text("Challenge\n\(categories[selectedSection ?? -1])")
                                 .font(.headline)
-                                .padding(.top, 20)
                             Text(challenge.items[challengeNumber-1].description)                                    .font(.footnote)
                                 .padding(.vertical, 10)
                             HStack {
+                                Spacer()
                                 Button(action: {
                                     isCompleted = true
                                 }, label: {
-                                    Text("Accompli")
-                                        .font(.footnote)
-                                        .padding(7)
+                                    Image(systemName: "checkmark")
+                                        .padding(12)
                                 })
                                 .foregroundColor(.black)
-                                .background(Color(red: 0.77, green: 0.76, blue: 0.761))
-                                .cornerRadius(20)
-                                
+                                .background(Color(.colorGrey))
+                                .cornerRadius(30)
+                                Spacer()
+                                Spacer()
                                 Button(action: {
                                     isFailed = true                            }, label: {
-                                        Text("Échoué")
-                                            .font(.footnote)
-                                            .padding(7)
+                                        Image(systemName: "multiply")
+                                            .padding(13)
                                     })
                                 .foregroundColor(.black)
-                                .background(Color(red: 0.77, green: 0.76, blue: 0.761))
-                                .cornerRadius(20)
+                                .background(Color(.colorGrey))
+                                .cornerRadius(30)
+                                Spacer()
                             }
                         }
                         .frame(width: 180, height: 200)
@@ -182,7 +185,7 @@ struct NatureGrowthView: View {
                 if isCompleted && item.id == items[items.count-1].id  {
                     Image(challenge.items[challengeNumber-1].arbre)
                         .resizable()
-                        .frame(width: 75, height: 75)
+                        .frame(width: 50, height: 50)
                         .foregroundColor(darkGreen)
                         .offset(x: offset.width, y: offset.height)
                         .gesture(

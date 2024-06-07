@@ -70,7 +70,6 @@ struct CarrouselView: View {
                     .font(.title)
                     Text("Challenges \(categories[selectedSection ?? -1])")
                         .font(.title3)
-                        
                         .fontWeight(.bold)
                         .frame(height: 50)
 
@@ -84,9 +83,13 @@ struct CarrouselView: View {
                         VStack {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 30)
-                                    .fill(Color(red: 0.98, green: 0.439, blue: 0.439))
-                                    .cornerRadius(2.0)
+                                    .fill(Color(.colorRose))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(.black)
+                                    )
                                     .frame(width: 200.0, height: 220.0)
+                         
                                 VStack {
                                     Spacer()
                                     Text("Challenge \(item.num)")
@@ -127,16 +130,21 @@ struct CarrouselView: View {
                                 dismiss()
                             }, label: {
                                 Text("Choisir")
-                                    .font(.footnote)
+                                    .font(.callout)
                                     .foregroundColor(Color.black)
                                     .frame(width: 60)
-                                    .padding(.horizontal, 20.0)
                                     .foregroundColor(.black)
-                                    .background(Color(red: 0.77, green: 0.76, blue: 0.761))
                                     .cornerRadius(20)
-                                    .border(.red)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
                             })
-                                Spacer()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color(.colorRose))
+                                    .foregroundColor(Color(.colorGrey))
+                            )
+                                                        
+                            Spacer()
                      
                             }.opacity(1.0 - abs(distance(item.id)) * 1 )
                            
