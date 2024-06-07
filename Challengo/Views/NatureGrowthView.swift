@@ -60,7 +60,7 @@ struct NatureGrowthView: View {
             NatureItem(position: CGSize(width: 180, height: 680), imageName: "lavande"),
             NatureItem(position: CGSize(width: 180, height: 660), imageName: "lavande"),
             NatureItem(position: CGSize(width: 180, height: 700), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 400, height: 400), imageName: "onSenFout") // Ajout du nouvel élément gagné
+        NatureItem(position: CGSize(width: 0, height: -70), imageName: "onSenFout") // Ajout du nouvel élément gagné
     ]
     let darkGreen = Color(red: 34/255, green: 139/255, blue: 34/255)
     var selectedSection: Int?
@@ -141,7 +141,7 @@ struct NatureGrowthView: View {
                             .frame(width: 200)
                         Image(challenge.items[challengeNumber-1].arbre)
                             .resizable()
-                            .frame(width: 70.0, height:70.0)
+                            .frame(width: 50.0, height:50.0)
                     }
                     .offset(x: 0, y: -70)
                 }
@@ -186,7 +186,6 @@ struct NatureGrowthView: View {
                     Image(challenge.items[challengeNumber-1].arbre)
                         .resizable()
                         .frame(width: 50, height: 50)
-                        .foregroundColor(darkGreen)
                         .offset(x: offset.width, y: offset.height)
                         .gesture(
                             DragGesture ()
