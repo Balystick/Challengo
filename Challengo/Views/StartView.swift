@@ -14,18 +14,6 @@ struct StartView: View {
     @State private var navigateToNatureGrowthView = false
     @State static var selectedSection = -1
     @State static var challengeNumber = 3
-
-
-//    var backButton: some View {
-//          Button(action: {
-//              // Action à effectuer lors du retour
-//              // Par exemple, pour revenir à la vue précédente :
-//              navigateToCalendarView = false
-//          }) {
-//              Image(systemName: "arrow.left")
-//                  .foregroundColor(Color.black)
-//          }
-//      }
     
     var body: some View {
             ZStack {
@@ -43,22 +31,43 @@ struct StartView: View {
                                      navigateToNatureGrowthView = true
                                  }
                              }
-                         }
-                 )
-            VStack{
-                HStack(spacing: 300){
-                    Button(action: {
-                        navigateToOnboardingView1 = true
-                    }, label: {
-                        Image(systemName: "info.square")
-                            .foregroundColor(Color.black)
-                    })
-                    Button(action: {
-                        navigateToCalendarView = true
-                    }, label: {
-                        Image(systemName: "calendar")
-                            .foregroundColor(Color.black)
-                    })
+                     )
+                VStack{
+                    HStack(spacing: 300){
+                        Button(action: {
+                            navigateToOnboardingView1 = true
+                        }, label: {
+                            Image(systemName: "info.square")
+                                .foregroundColor(Color.black)
+                        })
+                        Button(action: {
+                            navigateToCalendarView = true
+                        }, label: {
+                            Image(systemName: "calendar")
+                                .foregroundColor(Color.black)
+                        })
+                    }
+                    Spacer()
+                    Text("Envie de")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    Text(" Challenge ?")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 20.0)
+                    Text("pour être")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                    Text("meilleur")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                    Text("dans ta vie")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
             }
             .navigationBarHidden(true)
