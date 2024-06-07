@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AcceptedChallengeView: View {
+    @Binding var challengeNumber: Int
+    let challenge = Challenge()
+
     var body: some View {
             ZStack {
                 Image("ValleySun")
@@ -17,6 +20,7 @@ struct AcceptedChallengeView: View {
                 
                     ZStack {
                     VStack {
+//                        Text(challenge.items[challengeNumber-1].description)
                         Spacer()
                         RoundedRectangle(cornerRadius: 30.0)
                             .fill(.red)
@@ -34,7 +38,8 @@ struct AcceptedChallengeView: View {
                     VStack {
                         Spacer()
                         Spacer()
-                            Text("Challenge 1").font(.headline)
+                            Text("Challenge \(challengeNumber)")
+                            .font(.headline)
                             Spacer()
                             Text("Prendre une douche froide").font(.footnote)
                             Spacer()
@@ -60,9 +65,14 @@ struct AcceptedChallengeView: View {
                         }
                     }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 
-#Preview {
-    AcceptedChallengeView()
+// Ajustement Preview
+struct AcceptedChallengeView_Previews: PreviewProvider {
+    @State static var challengeNumber = 3
+    static var previews: some View {
+        AcceptedChallengeView(challengeNumber: $challengeNumber)
+    }
 }

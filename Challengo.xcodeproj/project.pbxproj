@@ -143,23 +143,23 @@
 		E11F7C132C0DFA55006CA138 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E10109992C0DF07B002FF84B /* ContentView.swift */,
-				F6F367D12C11B23E00341F38 /* StartView.swift */,
-				742263152C0F15CF009AC256 /* CongratsView.swift */,
-				742263172C0F15F1009AC256 /* CarrouselView.swift */,
-				742263192C0F1612009AC256 /* AcceptedChallengeView.swift */,
-				E1222B432C0F124F004F3E5E /* WheelView.swift */,
-				E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */,
-				E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */,
-				E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */,
-				E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */,
-				E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */,
 				F6F367D32C11B2FD00341F38 /* OnboardingView1.swift */,
 				F6F367D72C11B36800341F38 /* OnboardingView2.swift */,
 				F6F367D92C11B39700341F38 /* OnboardingView3.swift */,
 				F6F367DB2C11B3C800341F38 /* OnboardingView4.swift */,
 				F6F367DD2C11B3ED00341F38 /* OnboardingView5.swift */,
 				F6F367D52C11B33700341F38 /* JustifiedTextView.swift */,
+				E10109992C0DF07B002FF84B /* ContentView.swift */,
+				F6F367D12C11B23E00341F38 /* StartView.swift */,
+				E1222B432C0F124F004F3E5E /* WheelView.swift */,
+				742263172C0F15F1009AC256 /* CarrouselView.swift */,
+				742263192C0F1612009AC256 /* AcceptedChallengeView.swift */,
+				742263152C0F15CF009AC256 /* CongratsView.swift */,
+				E1ECCF8B2C10653700FAE9D7 /* NatureGrowthView.swift */,
+				E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */,
+				E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */,
+				E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */,
+				E1ECCF872C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

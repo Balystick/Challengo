@@ -10,11 +10,13 @@ import SwiftUI
 struct WheelView: View {
     @State private var rotationAngle: Double = 0
     @State private var isAnimating = false
-    @State private var SelectedSection: Int?
-    @State private var showModal = false
-    
+    @State private var selectedSection: Int?
+    @State private var showCarrouselView = false
+    @State private var challengeAccepted = false
+    @State private var challengeNumber = -1
+
     let sections = 8 // Nombre de sections de la roue
-    let rotationDuration: Double = 4.0 // Durée de l'animation en secondes
+    let rotationDuration: Double = 1.0 // Durée de l'animation en secondes
     var result: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
     
     var body: some View {
@@ -33,15 +35,15 @@ struct WheelView: View {
                     .offset(x: 0, y: -135)
                 
                 Button(action: spinWheel) {
-                    Text("Tourner la roue")
+                    Text("Lancez la roue !")
                         .padding()
                         .foregroundColor(.black)
                         .background(Color(red: 0.77, green: 0.76, blue: 0.761))                        .foregroundColor(.white)
                         .cornerRadius(30)
                         .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.red, lineWidth: 1)
-                                )
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color.red, lineWidth: 1)
+                        )
                 }
                 .padding()
             }
@@ -51,17 +53,26 @@ struct WheelView: View {
                 .frame(width: 50, height: 50)
                 .offset(x: -115, y: -330)
         }
-        .sheet(isPresented: $showModal) {
-            // Passage du paramètre à effectuer : CarrouselView(selectedChallenge: SelectedSection)
-            CarrouselView()
+        .sheet(isPresented: $showCarrouselView) {
+            CarrouselView(challengeAccepted: $challengeAccepted, selectedSection: selectedSection, challengeNumber: $challengeNumber)
+                .onDisappear {
+                    if challengeAccepted {
+                        showCarrouselView = false
+                    }
+                }
         }
-        .onChange(of: SelectedSection) {
+        .onChange(of: selectedSection) {
             // Délai avant l'affichage de la modale
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                showModal = true
+                showCarrouselView = true
             }
         }
+        .navigationDestination(isPresented: $challengeAccepted) {
+            NatureGrowthView(selectedSection: selectedSection, challengeNumber: $challengeNumber)
+                .navigationBarBackButtonHidden(true)
+        }
     }
+    
     
     func spinWheel() {
         let fullRotation = 360.0
@@ -94,11 +105,11 @@ struct WheelView: View {
         let angleSection = fullRotation / Double(sections)
         
         // Détermine la section sélectionnée
-        var SelectedSection = Int(normalizedRotation / angleSection)
-        SelectedSection = (sections - 1) - SelectedSection // fait correspondre la section sélectionnée avec l'indice de la catégorie
+        var selectedSection = Int(normalizedRotation / angleSection)
+        selectedSection = (sections - 1) - selectedSection // fait correspondre la section sélectionnée avec l'indice de la catégorie
         
         // Mettre à jour l'état avec la section gagnante
-        self.SelectedSection = SelectedSection
+        self.selectedSection = selectedSection
     }
 }
 
