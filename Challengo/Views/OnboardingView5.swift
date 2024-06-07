@@ -11,7 +11,6 @@ struct OnboardingView5: View {
     @State private var navigateToStartView = false
     
     var body: some View {
-        NavigationStack {
         VStack {
                 Text("ChallenGo")
                     .font(.title3)
@@ -66,7 +65,6 @@ struct OnboardingView5: View {
                 .navigationBarBackButtonHidden(true)
             }
             .navigationBarHidden(true)
-        }
     }
 }
 

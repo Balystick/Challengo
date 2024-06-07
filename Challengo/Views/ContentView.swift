@@ -12,13 +12,15 @@ struct ContentView: View {
     @State private var isFirstTimeUser: Bool = true
     
     var body: some View {
-        if isFirstTimeUser {
-            OnboardingView1()
-                .onAppear {
-                    UserDefaults.standard.set(true, forKey: "isFirstTimeUser")
-                }
-        } else {
-            StartView()
+        NavigationStack {
+            if isFirstTimeUser {
+                OnboardingView1()
+                    .onAppear {
+                        UserDefaults.standard.set(true, forKey: "isFirstTimeUser")
+                    }
+            } else {
+                StartView()
+            }
         }
     }
 }

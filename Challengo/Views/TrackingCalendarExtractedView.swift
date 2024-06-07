@@ -10,7 +10,7 @@ import SwiftUI
 struct TrackingCalendarExtractedView: View {
     @State private var date = Date()
     @State private var completedDates: [Date] = [Date]() // Les dates accomplies
-    @State private var navigateToStartView = false
+//    @State private var navigateToStartView = false
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -56,10 +56,7 @@ struct TrackingCalendarExtractedView: View {
                 .accentColor(.colorGreenDark)
                 Spacer()
             }
-            .navigationBarHidden(true) // Cacher la barre de navigation par défaut
-            .navigationDestination(isPresented: $navigateToStartView) {
-                StartView() // Retourner à la vue StartView lorsque la variable navigateToStartView est vraie
-            }
+            .navigationBarHidden(true)
         }
     }
     

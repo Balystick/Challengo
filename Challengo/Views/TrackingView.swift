@@ -9,10 +9,22 @@ import SwiftUI
 
 struct TrackingView: View {
     @State private var segmentedSelection = 0
+    @State private var navigateToStartView = false
     
     var body: some View {
+
         // Segmented section
         VStack {
+            HStack {
+               Button(action: {
+                   navigateToStartView = true // Action pour retourner à la vue précédente (StartView)
+               }) {
+                   Image(systemName: "arrow.left")
+                       .foregroundColor(Color.black)
+                       .padding()
+               }
+               Spacer()
+           }
             Picker("", selection: $segmentedSelection) {
                 Text("CALENDAR").tag(0)
                 Text("BALANCE").tag(1)
@@ -21,7 +33,7 @@ struct TrackingView: View {
             .pickerStyle(.segmented)
             .colorMultiply(.raspberry)
             .padding(.bottom, 30)
-
+            
             switch segmentedSelection {
             case 0:
                 TrackingCalendarExtractedView()
@@ -36,6 +48,9 @@ struct TrackingView: View {
         }
         .padding([.leading, .trailing], 10)
         .navigationBarHidden(true)
+        .navigationDestination(isPresented: $navigateToStartView) {
+            StartView()
+        }
     }
 }
 

@@ -12,65 +12,63 @@ struct OnboardingView1: View {
     @State private var navigateToOnboardingView2 = false
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("ChallenGo")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                ZStack {
-                    Image("Onbording background")
-                        .offset(x: -105)
-                        .frame(height: 250)
-                    Image("Logo")
-                        .offset(y: -30)
-                }
-                .padding(.top, 50)
-                Image("State 1")
-                    .padding(.bottom, 15)
-                Text("Bienvenue sur")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .padding(.bottom, 1)
-                Text("ChallenGo")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .padding(.bottom, 20)
-                JustifiedTextView(text: "Embarquez pour un voyage de croissance personnelle et de réussite. Avec des défis quotidiens conçus pour vous inspirer et vous motiver, ChallenGo vous aide à grandir, un pas à la fois.")
-                    .padding(.horizontal, 30)
-                    .frame(height: 120)
-                JustifiedTextView(text: "Commencez dès aujourd'hui votre chemin vers l'amélioration de soi !")
-                    .padding(.horizontal, 30)
-                Spacer()
-                HStack(spacing: 200) {
-                    Button(action: {
-                        navigateToStartView = true
-                    }, label: {
-                        Text("Skip")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.colorRose)
-                    })
-                    Button(action: {
-                        navigateToOnboardingView2 = true
-                    }, label: {
-                        Text("Next")
-                            .padding(.horizontal, 25)
-                            .padding(.vertical, 10)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .background(Color(.colorRose))
-                            .cornerRadius(10)
-                    })
-                }
+        VStack {
+            Text("ChallenGo")
+                .font(.title3)
+                .fontWeight(.semibold)
+            ZStack {
+                Image("Onbording background")
+                    .offset(x: -105)
+                    .frame(height: 250)
+                Image("Logo")
+                    .offset(y: -30)
             }
-            .navigationDestination(isPresented: $navigateToStartView) {
-                StartView()
-                .navigationBarBackButtonHidden(true)
+            .padding(.top, 50)
+            Image("State 1")
+                .padding(.bottom, 15)
+            Text("Bienvenue sur")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .padding(.bottom, 1)
+            Text("ChallenGo")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .padding(.bottom, 20)
+            JustifiedTextView(text: "Embarquez pour un voyage de croissance personnelle et de réussite. Avec des défis quotidiens conçus pour vous inspirer et vous motiver, ChallenGo vous aide à grandir, un pas à la fois.")
+                .padding(.horizontal, 30)
+                .frame(height: 120)
+            JustifiedTextView(text: "Commencez dès aujourd'hui votre chemin vers l'amélioration de soi !")
+                .padding(.horizontal, 30)
+            Spacer()
+            HStack(spacing: 200) {
+                Button(action: {
+                    navigateToStartView = true
+                }, label: {
+                    Text("Skip")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.colorRose)
+                })
+                Button(action: {
+                    navigateToOnboardingView2 = true
+                }, label: {
+                    Text("Next")
+                        .padding(.horizontal, 25)
+                        .padding(.vertical, 10)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .background(Color(.colorRose))
+                        .cornerRadius(10)
+                })
             }
-            .navigationDestination(isPresented: $navigateToOnboardingView2) {
-                OnboardingView2()
-            }
-            .navigationBarHidden(true)
         }
+        .navigationDestination(isPresented: $navigateToStartView) {
+            StartView()
+            .navigationBarBackButtonHidden(true)
+        }
+        .navigationDestination(isPresented: $navigateToOnboardingView2) {
+            OnboardingView2()
+        }
+        .navigationBarHidden(true)
     }
 }
 
