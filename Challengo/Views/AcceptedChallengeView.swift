@@ -10,7 +10,6 @@ import SwiftUI
 struct AcceptedChallengeView: View {
     var body: some View {
             ZStack {
-            
                 Image("ValleySun")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
