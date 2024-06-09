@@ -39,7 +39,7 @@ struct WheelView: View {
                     .scaledToFit()
                     .frame(width: 350)
                     .rotationEffect(.degrees(rotationAngle))
-                    .animation(.easeOut(duration: rotationDuration), value: rotationAngle)
+                    .animation(.easeInOut(duration: rotationDuration), value: rotationAngle)
                     .offset(x: 0, y: -135)
                 
                 Button(action: spinWheelAndSelectCategory) {
