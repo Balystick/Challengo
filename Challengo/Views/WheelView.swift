@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct WheelView: View {
-    @State private var rotationAngle: Double = 0
-    @State private var isAnimating = false
-    @State private var selectedSection: Int?
+    let sections = 8 // Nombre de sections de la roue
+    let rotationDuration: Double = 4.0 // Durée de l'animation en secondes
+    @State private var rotationAngle: Double = 0 // Angle de rotation de la roue
+    @State private var selectedCategory: Int? // Catégorie de challenges sélectionnée
     @State private var showCarrouselView = false
     @State private var challengeAccepted = false
     @State private var challengeNumber = -1
-
-    let sections = 8 // Nombre de sections de la roue
-    let rotationDuration: Double = 1.0 // Durée de l'animation en secondes
-    var result: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
     
     var body: some View {
         ZStack {
@@ -31,10 +28,10 @@ struct WheelView: View {
                     .scaledToFit()
                     .frame(width: 350)
                     .rotationEffect(.degrees(rotationAngle))
-                    .animation(isAnimating ? .easeOut(duration: rotationDuration) : .none, value: rotationAngle)
+                    .animation(.easeOut(duration: rotationDuration), value: rotationAngle)
                     .offset(x: 0, y: -135)
                 
-                Button(action: spinWheel) {
+                Button(action: spinWheelAndSelectCategory) {
                     Text("Lancer !")
                         .font(.callout)
                         .padding(.horizontal, 10)
@@ -53,65 +50,44 @@ struct WheelView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
-                .offset(x: -115, y: -330)
+                .offset(x: -120, y: -320)
         }
         .sheet(isPresented: $showCarrouselView) {
-            CarrouselView(challengeAccepted: $challengeAccepted, selectedSection: selectedSection, challengeNumber: $challengeNumber)
+            CarrouselView(challengeAccepted: $challengeAccepted, selectedCategory: selectedCategory, challengeNumber: $challengeNumber)
                 .onDisappear {
                     if challengeAccepted {
                         showCarrouselView = false
+                    } 
+                    else {
+                        rotationAngle = 0
                     }
                 }
         }
-        .onChange(of: selectedSection) {
+        .onChange(of: selectedCategory) {
             // Délai avant l'affichage de la modale
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                 showCarrouselView = true
             }
         }
         .navigationDestination(isPresented: $challengeAccepted) {
-            NatureGrowthView(selectedSection: selectedSection, challengeNumber: $challengeNumber)
+            NatureGrowthView(selectedCategory: selectedCategory, challengeNumber: $challengeNumber)
                 .navigationBarBackButtonHidden(true)
         }
     }
     
-    
-    func spinWheel() {
-        let fullRotation = 360.0
-        // Définit un nombre de tours aléatoire (3 ou 4)
-        let randomRotation = Double.random(in: 3...4) * fullRotation
+    func spinWheelAndSelectCategory() {
+        // définit une rotation aléatoire entre 2 et 4 tous (en degrés)
+        let rotation = Double.random(in: 2...4) * 360.0
+        // Met à jour rotationAngle
+        rotationAngle = rotation
         
-        // Ajoute une rotation supplémentaire aléatoire
-        let additionalRotation = Double.random(in: 0..<Double(sections)) * (fullRotation / Double(sections))
-        let totalRotation = randomRotation + additionalRotation
-        
-        // Démarre l'animation de la roue
-        withAnimation {
-            rotationAngle += totalRotation
-            isAnimating = true
-        }
-        
-        // Détermine la section sélectionnée après l'animation
+        // Détermine la section sur laquelle se trouve le pointeur après rotation
         DispatchQueue.main.asyncAfter(deadline: .now() + rotationDuration) {
-            isAnimating = false
-            self.calculateSelectedSection(totalRotation: totalRotation)
+            let anglePerSection = 360.0 / Double(sections)
+            let calculatedSection = Int(rotation.truncatingRemainder(dividingBy: 360.0) / anglePerSection) + 1
+            // Détermine l'index de la catégorie
+            selectedCategory = sections - calculatedSection
         }
-    }
-    
-    func calculateSelectedSection(totalRotation: Double) {
-        // Normalise la rotation entre 0 et 360
-        let fullRotation = 360.0
-        let normalizedRotation = totalRotation.truncatingRemainder(dividingBy: fullRotation)
-        
-        // Calcul de l'angle par section
-        let angleSection = fullRotation / Double(sections)
-        
-        // Détermine la section sélectionnée
-        var selectedSection = Int(normalizedRotation / angleSection)
-        selectedSection = (sections - 1) - selectedSection // fait correspondre la section sélectionnée avec l'indice de la catégorie
-        
-        // Mettre à jour l'état avec la section gagnante
-        self.selectedSection = selectedSection
     }
 }
 

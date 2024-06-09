@@ -48,10 +48,11 @@ struct CarrouselView: View {
     @State var activeIndex: Int = 0
     //Passage du challenge accepté à la vue mère
     @Binding var challengeAccepted: Bool
-    var selectedSection: Int?
+
+    var selectedCategory: Int?
     @Binding var challengeNumber: Int
     // Créer une classe si on a le temps
-    var categories: [String] = ["Courage existentiel", "Ouverture à l”expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
+    var categories: [String] = ["Courage existentiel", "Ouverture à l'expérience", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
 
     var body: some View {
      
@@ -68,10 +69,12 @@ struct CarrouselView: View {
                     .frame(alignment: .topTrailing)
 //                    .padding()
                     .font(.title)
-                    Text("Challenges \(categories[selectedSection ?? -1])")
+                    Text("Challenges\n\(categories[selectedCategory ?? -1])")
                         .font(.title3)
                         .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                         .frame(height: 50)
+                        .padding(.bottom, 10)
 
                 }
                    }
@@ -205,9 +208,9 @@ struct CarrouselView: View {
 // Ajustement Preview
 struct CarrouselView_Previews: PreviewProvider {
     @State static var challengeAccepted = true
-    @State static var selectedSection = 3
+    @State static var selectedCategory = 3
     @State static var challengeNumber = 3
     static var previews: some View {
-        CarrouselView(challengeAccepted: $challengeAccepted, selectedSection: selectedSection, challengeNumber: $challengeNumber)
+        CarrouselView(challengeAccepted: $challengeAccepted, selectedCategory: selectedCategory, challengeNumber: $challengeNumber)
     }
 }
