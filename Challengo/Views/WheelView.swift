@@ -62,11 +62,6 @@ struct WheelView: View {
                 .scaledToFit()
                 .frame(width: 50, height: 50)
                 .offset(x: -120, y: -320)
-            Image("arrow")
-                .resizable()
-                .frame(width: 75, height: 75)
-                .scaleEffect(x: -1, y: 1)
-                .offset(x: -150, y: 350)
         }
         .sheet(isPresented: $showCarrouselView) {
             CarrouselView(challengeAccepted: $challengeAccepted, selectedCategory: selectedCategory, challengeNumber: $challengeNumber)

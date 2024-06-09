@@ -51,7 +51,7 @@ struct StartView: View {
                 Text("Envie de")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .padding(.bottom, 5.0)
+                    .padding(.bottom, 1)
                 Text(" Challenge ?")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
@@ -69,7 +69,18 @@ struct StartView: View {
             Image("arrow")
                 .resizable()
                 .frame(width: 80, height: 80)
-                .offset(CGSize(width: 150.0, height: -44.0))
+                .offset(CGSize(width: 150.0, height: -46.0))
+            HStack {
+                Image("arrow")
+                    .resizable()
+                    .frame(width: 75, height: 75)
+                    .scaleEffect(x: -1, y: 1)
+                Text("Découvre ta forêt virtuelle")
+                    .font(.body)
+                    .fontWeight(.semibold)
+                Spacer()
+            }
+            .offset(x: 20, y: 230)
         }
         .navigationBarHidden(true)
         .navigationDestination(isPresented: $navigateToOnboardingView1) {
@@ -88,6 +99,7 @@ struct StartView: View {
         }
         .navigationDestination(isPresented: $navigateToNatureGrowthView) {
             NatureGrowthView(selectedCategory: -1, challengeNumber: StartView.$challengeNumber)
+                .transition(.identity)
         }
         .navigationBarHidden(true)
     }
