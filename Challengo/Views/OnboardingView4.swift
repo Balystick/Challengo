@@ -38,7 +38,7 @@ struct OnboardingView4: View {
                 .fontWeight(.semibold)
                 .padding(.bottom, 20)
                 .offset(y: -50)
-            JustifiedTextView(text: "Vos réalisations virtuelles peuvent avoir un impact réel sur votre  bien-être mental, physique, emotionnel, intellectuel et spirituel")
+            JustifiedTextView(text: "L'accomplissement de challenges de croissance personnelle et votre forêt virtuelle peuvent avoir un réel impact sur votre bien-être physique, émotionnel, mental et spirituel.")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
                 .offset(y: -5)

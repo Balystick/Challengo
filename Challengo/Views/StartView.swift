@@ -49,17 +49,18 @@ struct StartView: View {
                 }
                 Spacer()
                 Text("Envie de")
-                    .font(.title2)
+                    .font(.title)
                     .fontWeight(.semibold)
+                    .padding(.bottom, 5.0)
                 Text(" Challenge ?")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                    .padding(.vertical, 20.0)
-                Text("pour être meilleur dans ta vie")
+                    .padding(.bottom, 90)
+                Text("Relève des défis amusants pour enrichir ta croissance personnelle")
                     .font(.body)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .frame(width: 100)
+                    .frame(width: 250)
                 Spacer()
                 Spacer()
                 Spacer()
@@ -67,8 +68,8 @@ struct StartView: View {
             }
             Image("arrow")
                 .resizable()
-                .frame(width: 100, height: 100)
-                .offset(CGSize(width: 120.0, height: 100.0))
+                .frame(width: 80, height: 80)
+                .offset(CGSize(width: 150.0, height: -44.0))
         }
         .navigationBarHidden(true)
         .navigationDestination(isPresented: $navigateToOnboardingView1) {
@@ -81,8 +82,9 @@ struct StartView: View {
                 .navigationBarBackButtonHidden(true)
         }
         .navigationDestination(isPresented: $navigateToWheelView) {
-            WheelView()
+            WheelView(navigateToWheelView: $navigateToWheelView)
                 .navigationBarBackButtonHidden(true)
+
         }
         .navigationDestination(isPresented: $navigateToNatureGrowthView) {
             NatureGrowthView(selectedCategory: -1, challengeNumber: StartView.$challengeNumber)

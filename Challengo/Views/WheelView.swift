@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct WheelView: View {
+    //Navigation
+    @Binding var navigateToWheelView: Bool
+    // Animation de la roue
     let sections = 8 // Nombre de sections de la roue
-    let rotationDuration: Double = 4.0 // Durée de l'animation en secondes
+    let rotationDuration: Double = 3.0 // Durée de l'animation en secondes
     @State private var rotationAngle: Double = 0 // Angle de rotation de la roue
     @State private var selectedCategory: Int? // Catégorie de challenges sélectionnée
     @State private var showCarrouselView = false
@@ -22,6 +25,14 @@ struct WheelView: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width > 50 {
+                                navigateToWheelView = false
+                            }
+                        }
+                )
             VStack {
                 Image("roue")
                     .resizable()
@@ -37,7 +48,7 @@ struct WheelView: View {
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
                         .foregroundColor(.black)
-                        .background(Color(.colorGrey))              .foregroundColor(.white)
+                        .background(Color(.colorGrey))
                         .cornerRadius(30)
                         .overlay(
                             RoundedRectangle(cornerRadius: 30)
@@ -51,6 +62,11 @@ struct WheelView: View {
                 .scaledToFit()
                 .frame(width: 50, height: 50)
                 .offset(x: -120, y: -320)
+            Image("arrow")
+                .resizable()
+                .frame(width: 75, height: 75)
+                .scaleEffect(x: -1, y: 1)
+                .offset(x: -150, y: 350)
         }
         .sheet(isPresented: $showCarrouselView) {
             CarrouselView(challengeAccepted: $challengeAccepted, selectedCategory: selectedCategory, challengeNumber: $challengeNumber)
@@ -76,8 +92,8 @@ struct WheelView: View {
     }
     
     func spinWheelAndSelectCategory() {
-        // définit une rotation aléatoire entre 2 et 4 tous (en degrés)
-        let rotation = Double.random(in: 2...4) * 360.0
+        // définit une rotation aléatoire entre 4 et 6 tours (en degrés)
+        let rotation = Double.random(in: 4...6) * 360.0
         // Met à jour rotationAngle
         rotationAngle = rotation
         
@@ -92,7 +108,9 @@ struct WheelView: View {
 }
 
 struct WheelView_Previews: PreviewProvider {
+    @State static var navigateToWheelView = false
+
     static var previews: some View {
-        WheelView()
+        WheelView(navigateToWheelView: $navigateToWheelView)
     }
 }

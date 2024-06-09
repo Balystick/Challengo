@@ -134,12 +134,16 @@ struct CarrouselView: View {
                             }, label: {
                                 Text("Choisir")
                                     .font(.callout)
-                                    .foregroundColor(Color.black)
                                     .frame(width: 60)
-                                    .foregroundColor(.black)
-                                    .cornerRadius(20)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 5)
+                                    .foregroundColor(.black)
+                                    .background(Color(.colorGrey))
+                                    .cornerRadius(30)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.red, lineWidth: 1)
+                                    )
                             })
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)

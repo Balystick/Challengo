@@ -31,12 +31,12 @@ struct OnboardingView5: View {
                         Image("State 5")
                     }
                 }
-                Text("Prêt(e) à grandir?")
+                Text("Prêt(e) à grandir ?")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .padding(.bottom, 20)
                     .offset(y: -30)
-                JustifiedTextView(text: "Votre voyage vers un meilleur vous commence maintenant. Relevez le défi, grandissez chaque jour et regardez votre forêt et vous même prospérer. Commencez maintenant!")
+                JustifiedTextView(text: "Votre aventure avec Challengo commence maintenant.\n\nRelevez le défi, grandissez chaque jour et voyez comment votre forêt et vous-même prospérez.")
                     .padding(.horizontal, 30)
                 Spacer()
                 HStack(spacing: 200) {

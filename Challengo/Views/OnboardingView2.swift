@@ -30,10 +30,10 @@ struct OnboardingView2: View {
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(.bottom, 25)
-            JustifiedTextView(text: "Chaque jour, vous recevrez un nouveau défi conçu pour vous aider à grandir. Des exercices de pleine conscience aux astuces de productivité, chaque défi est conçu pour faire de vous une meilleure version de vous-même.")
+            JustifiedTextView(text: "Chaque jour, relevez un nouveau défi conçu pour vous aider à grandir. Des exercices de pleine conscience aux astuces de productivité, chaque défi est conçu pour vous guider et vous soutenir dans votre développement.")
                 .frame(height: 140)
                 .padding(.horizontal, 30)
-            JustifiedTextView(text: "Restez constant : Relevez des défis quotidiennement pour construire des habitudes durables")
+            JustifiedTextView(text: "Restez constant : relevez des défis quotidiens aide à construire des habitudes durables.")
                 .padding(.horizontal, 30)
             Spacer()
             HStack(spacing: 200) {
