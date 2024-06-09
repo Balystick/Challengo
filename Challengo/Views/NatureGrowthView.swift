@@ -71,8 +71,8 @@ struct NatureGrowthView: View {
         NatureItem(position: CGSize(width: 200, height: 640), imageName: "lavande"),
         NatureItem(position: CGSize(width: 180, height: 640), imageName: "lavande"),
         NatureItem(position: CGSize(width: 180, height: 680), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 180, height: 660), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 180, height: 700), imageName: "lavande"),
+        NatureItem(position: CGSize(width: 172, height: 660), imageName: "lavande"),
+        NatureItem(position: CGSize(width: 170, height: 700), imageName: "lavande"),
         NatureItem(position: CGSize(width: 0, height: -80), imageName: "tmp") // Ajout du nouvel élément gagné
     ]
     
@@ -104,8 +104,6 @@ struct NatureGrowthView: View {
                                 RoundedRectangle(cornerRadius: 30)
                                     .stroke(Color.black, lineWidth: 1))
                         VStack {
-//                            Text(categories[selectedCategory ?? -1])
-//                                .font(.headline)
                             Text(challenge.items[challengeNumber-1].description)                                    .font(.footnote)
                                 .padding(.vertical, 10)
                             HStack {
@@ -150,8 +148,8 @@ struct NatureGrowthView: View {
                 // Affichage des félicitations
                 
                 if isCompleted && !isCongratulated {
-                    Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel item et savoure\nta réussite !")
-                        .font(.subheadline)
+                    Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel élément et savoure\nta réussite !")
+                        .font(.callout)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -173,7 +171,7 @@ struct NatureGrowthView: View {
                 // Affichage des condoléances
                 if isFailed && !isCongratulated {
                     Text("Ne vous découragez pas !\n\nChaque échec est une opportunité\nd’apprendre.\n\nRelevez le prochain défi et continuez\nà avancer ! 🌟")
-                        .font(.subheadline)
+                        .font(.callout)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)
