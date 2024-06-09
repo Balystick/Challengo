@@ -72,14 +72,9 @@ struct TrackingCalendarExtractedView: View {
             }
             .padding()
             .background(Color.white)
-//            .cornerRadius(15)
-//            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 0) // Ombre légère sur les côtés
-                        
-                        // Ombre légère en bas et à droite
             .shadow(color: Color.black.opacity(0.1), radius: 2, x: 2, y: 2)
         }
         .padding()
-//        .background(Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
     }
     
     var monthName: String {
@@ -99,30 +94,22 @@ struct TrackingCalendarExtractedView: View {
               let range = calendar.range(of: .day, in: .month, for: startDate) else {
             return dates
         }
-        
-        // Calculate the start date including padding
         let startDayOfWeek = calendar.component(.weekday, from: startDate) - calendar.firstWeekday
         let paddedStartDate = calendar.date(byAdding: .day, value: -startDayOfWeek, to: startDate)!
-        
-        // Add previous month's dates (if any)
         var currentDate = paddedStartDate
         while currentDate < startDate {
             dates.append(currentDate)
             currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
         }
-        
-        // Add current month's dates
         dates.append(contentsOf: range.map { day -> Date in
             return calendar.date(byAdding: .day, value: day - 1, to: startDate)!
         })
-        
-        // Add next month's dates (if any)
         currentDate = calendar.date(byAdding: .day, value: range.count, to: startDate)!
         while dates.count % 7 != 0 {
             dates.append(currentDate)
             currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
         }
-        
+
         return dates
     }
     
