@@ -98,9 +98,8 @@ struct StartView: View {
         }
         .navigationDestination(isPresented: $navigateToNatureGrowthView) {
             NatureGrowthView(selectedCategory: -1, challengeNumber: StartView.$challengeNumber)
-                .transition(.identity)
         }
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
