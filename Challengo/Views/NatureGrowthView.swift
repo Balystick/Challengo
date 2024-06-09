@@ -148,8 +148,9 @@ struct NatureGrowthView: View {
                 }
                 
                 // Affichage des félicitations
+                
                 if isCompleted && !isCongratulated {
-                    Text(displayedText)
+                    Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel item et savoure\nta réussite !")
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -160,18 +161,17 @@ struct NatureGrowthView: View {
                                 .stroke(Color(.colorRose), lineWidth: 1)
                         )
                         .offset(x: 0, y: -130)
-                        .padding()
                         .onAppear {
-                            startTyping(text: "Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel item et savoure ta réussite !")
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                 isCongratulated = true
+                                
                             }
                         }
                 }
                 
                 // Affichage des condoléances
                 if isFailed && !isCongratulated {
-                    Text(displayedText)
+                    Text("Ne vous découragez pas !\n\nChaque échec est une opportunité\nd’apprendre.\n\nRelevez le prochain défi et continuez\nà avancer ! 🌟")
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -182,10 +182,8 @@ struct NatureGrowthView: View {
                                 .stroke(Color(.colorRose), lineWidth: 1)
                         )
                         .offset(x: 0, y: -130)
-                        .padding()
                         .onAppear {
-                            startTyping(text: "Ne vous découragez pas !\n\nChaque échec est une opportunité\n d’apprendre.\n\nRelevez le prochain défi et continuez\nà avancer ! 🌟")
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
                                 isCongratulated = true
                                 navigateToStartView = true
                             }
@@ -236,20 +234,6 @@ struct NatureGrowthView: View {
         }
         .navigationDestination(isPresented: $navigateToStartView) {
             StartView()
-        }
-    }
-    func startTyping(text: String) {
-        timer?.invalidate()
-        index = 0
-        displayedText = ""
-        timer = Timer.scheduledTimer(withTimeInterval: 0.07, repeats: true) { _ in
-            if index < text.count {
-                let nextIndex = text.index(text.startIndex, offsetBy: index)
-                displayedText.append(text[nextIndex])
-                index += 1
-            } else {
-                timer?.invalidate()
-            }
         }
     }
 }
