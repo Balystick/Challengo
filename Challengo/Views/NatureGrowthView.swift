@@ -23,8 +23,8 @@ struct NatureGrowthView: View {
     let challenge = Challenge()
     // Retour à la vue de départ
     @State private var navigateToStartView = false
-    // Drag'n drop new item
-    @State var offset: CGSize = .zero
+    // Drag'n drop nouvel item
+    @State var offset: CGSize = CGSize(width: 0, height: -50)
     @State private var startLocation: CGSize = .zero
     // Logique d'affichage
     @State private var isCompleted = false
@@ -73,7 +73,7 @@ struct NatureGrowthView: View {
         NatureItem(position: CGSize(width: 180, height: 680), imageName: "lavande"),
         NatureItem(position: CGSize(width: 180, height: 660), imageName: "lavande"),
         NatureItem(position: CGSize(width: 180, height: 700), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 0, height: -70), imageName: "tmp") // Ajout du nouvel élément gagné
+        NatureItem(position: CGSize(width: 0, height: -80), imageName: "tmp") // Ajout du nouvel élément gagné
     ]
     
     var body: some View {
@@ -104,8 +104,8 @@ struct NatureGrowthView: View {
                                 RoundedRectangle(cornerRadius: 30)
                                     .stroke(Color.black, lineWidth: 1))
                         VStack {
-                            Text(categories[selectedCategory ?? -1])
-                                .font(.headline)
+//                            Text(categories[selectedCategory ?? -1])
+//                                .font(.headline)
                             Text(challenge.items[challengeNumber-1].description)                                    .font(.footnote)
                                 .padding(.vertical, 10)
                             HStack {
@@ -144,13 +144,14 @@ struct NatureGrowthView: View {
                             .resizable()
                             .frame(width: 50.0, height:50.0)
                     }
-                    .offset(x: 0, y: -70)
+                    .offset(x: 0, y: -80)
                 }
                 
                 // Affichage des félicitations
                 
                 if isCompleted && !isCongratulated {
                     Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel item et savoure\nta réussite !")
+                        .font(.subheadline)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -160,7 +161,7 @@ struct NatureGrowthView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color(.colorRose), lineWidth: 1)
                         )
-                        .offset(x: 0, y: -130)
+                        .offset(x: 0, y: -190)
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                 isCongratulated = true
@@ -172,6 +173,7 @@ struct NatureGrowthView: View {
                 // Affichage des condoléances
                 if isFailed && !isCongratulated {
                     Text("Ne vous découragez pas !\n\nChaque échec est une opportunité\nd’apprendre.\n\nRelevez le prochain défi et continuez\nà avancer ! 🌟")
+                        .font(.subheadline)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 20)

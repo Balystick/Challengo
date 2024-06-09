@@ -20,36 +20,27 @@ struct OnboardingView3: View {
                 Image("Onbording background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 400)
+                    .frame(height: 350)
                     .rotationEffect(.degrees(-177.38))
                     .offset(x: 50)
-                VStack {
                     Image("Onbording 3")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 240)
-                        .offset(y: -30)
-                    Image("State 3")
-                        .padding(.top, 15)
-                }
             }
+            Image("State 3")
+                .offset(y: 0)
+                .padding(.bottom, 10)
             Text("Faites croître votre")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .offset(y: -45)
             Text("forêt virtuelle")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .padding(.bottom, 10)
-                .offset(y: -40)
             JustifiedTextView(text: "Chaque fois que vous réussirez un challenge, vous planterez un arbre ou un élément de votre forêt virtuelle. Regardez votre forêt prospérer à mesure que vous atteignez vos objectifs.")
-                .frame(height: 120)
-                .padding(.horizontal, 30)
-                .offset(y: -20)
-            JustifiedTextView(text: "Visualisez vos progrès : Votre forêt virtuelle est le reflet de votre engagement et de votre croissance.")
-                .frame(height: 70)
-                .padding(.horizontal, 30)
-                .offset(y: -20)
+            // Visualisez vos progrès : Votre forêt virtuelle est le reflet de votre engagement et de votre croissance.
+                .padding()
+
             HStack(spacing: 200) {
                 Button(action: {
                     navigateToStartView = true

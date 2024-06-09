@@ -45,8 +45,8 @@ struct WheelView: View {
                 Button(action: spinWheelAndSelectCategory) {
                     Text("Lancer !")
                         .font(.callout)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
                         .foregroundColor(.black)
                         .background(Color(.colorGrey))
                         .cornerRadius(30)

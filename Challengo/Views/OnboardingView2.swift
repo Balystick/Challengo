@@ -25,16 +25,15 @@ struct OnboardingView2: View {
             }
             .padding(.top, 80)
             Image("State 2")
-                .padding(.bottom, 15)
+                .offset(y: 0)
+                .padding(.bottom, 10)
             Text("Défis quotidiens")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .padding(.bottom, 25)
+                .padding(.bottom, 15)
             JustifiedTextView(text: "Chaque jour, relevez un nouveau défi conçu pour vous aider à grandir. Des exercices de pleine conscience aux astuces de productivité, chaque défi est conçu pour vous guider et vous soutenir dans votre développement.")
-                .frame(height: 140)
-                .padding(.horizontal, 30)
-            JustifiedTextView(text: "Restez constant : relevez des défis quotidiens aide à construire des habitudes durables.")
-                .padding(.horizontal, 30)
+                .padding()
+            // Restez constant : relevez des défis quotidiens aide à construire des habitudes durables.
             Spacer()
             HStack(spacing: 200) {
                 Button(action: {

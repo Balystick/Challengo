@@ -89,7 +89,6 @@ struct StartView: View {
         }
         .navigationDestination(isPresented: $navigateToCalendarView) {
             TrackingView()
-            //                .navigationBarItems(leading: backButton)
                 .navigationBarBackButtonHidden(true)
         }
         .navigationDestination(isPresented: $navigateToWheelView) {

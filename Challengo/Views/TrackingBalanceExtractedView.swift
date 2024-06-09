@@ -50,6 +50,7 @@ struct TrackingBalanceExtractedView: View {
                     let frame = geometry[anchor]
                     VStack {
                         Text("&nbsp;&nbsp;Challenges\naccomplis par\n&nbsp;&nbsp;&nbsp;catégorie")
+                            .font(.subheadline)
                             .position(x: frame.midX, y: frame.midY)
                     }
                 }
