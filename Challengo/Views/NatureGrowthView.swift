@@ -170,7 +170,7 @@ struct NatureGrowthView: View {
                 
                 // Affichage des condoléances
                 if isFailed && !isCongratulated {
-                    Text("Ne vous découragez pas !\n\nChaque échec est une opportunité\nd’apprendre.\n\nRelevez le prochain défi et continuez\nà avancer ! 🌟")
+                    Text("Ne te décourage pas !\n\nChaque échec est une opportunité\nd’apprendre.\n\nRelève le prochain défi et continue\nà avancer ! 🌟")
                         .font(.callout)
                         .padding()
                         .background(
