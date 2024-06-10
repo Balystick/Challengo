@@ -12,8 +12,8 @@ struct StartView: View {
     @State private var navigateToOnboardingView1 = false
     @State private var navigateToWheelView = false
     @State private var navigateToNatureGrowthView = false
-    @State static var selectedCategory = -1
-    @State static var challengeNumber = 3
+    @State private var selectedCategory = -1
+    @State private var challengeNumber = 3
     
     var body: some View {
         ZStack {
@@ -97,7 +97,7 @@ struct StartView: View {
 
         }
         .navigationDestination(isPresented: $navigateToNatureGrowthView) {
-            NatureGrowthView(selectedCategory: -1, challengeNumber: StartView.$challengeNumber)
+            NatureGrowthView(selectedCategory: -1, challengeNumber: $challengeNumber)
         }
         .navigationBarBackButtonHidden(true)
     }
