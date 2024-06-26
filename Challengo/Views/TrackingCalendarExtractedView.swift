@@ -151,9 +151,6 @@ struct CalendarDayView: View {
         if day == 0 {
                     Color.clear.frame(width: 40, height: 40)
                 } else {
-                    // Constantes inutilisées
-                    // let isSuccessful = successfulChallenges.contains(where: { Calendar.current.isDate($0, inSameDayAs: date) })
-                    // let isUnsuccessful = unsuccessfulChallenges.contains(where: { Calendar.current.isDate($0, inSameDayAs: date) })
                     let accentShape: AnyShape = isToday ? AnyShape(RoundedRectangle(cornerRadius: 10)) : AnyShape(Circle())
                     Text("\(day)")
                         .frame(width: 40, height: 40)
