@@ -1,10 +1,9 @@
 import SwiftUI
 import Charts
 /**
- Cette vue affiche un graphique représentant le suivi des réussites et des échecs des challenges par mois.
+ Cette vue affiche un graphique représentant le suivi des réussites et des échecs des challenges par mois.  Le graphique inclut une légende ainsi que des annotations pour chaque barre.
 
- `TrackingWinFailExtractedView` utilise un `Chart` pour montrer les réussites et les échecs des challenges avec `BarMark`. Une légende est inclue sous le graphique qui comporte également
- Le graphique inclut des légendes en bas ainsi que pour chaque barre.
+ `TrackingWinFailExtractedView` utilise un `Chart` avec `BarMark`.
 
  - Auteur: Aurélien
  - Date: 04/06/2024

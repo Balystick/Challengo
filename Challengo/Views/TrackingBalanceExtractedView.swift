@@ -2,15 +2,15 @@ import SwiftUI
 import Charts
 
 /**
- Cette vue affiche un graphique représentant le suivi du nombre de challenges accomplis dans les différentes catégories.
-
- `TrackingBalanceExtractedView` utilise un `Chart` pour montrer la proportion de challenges accomplis dans les différentes catégorie avec `SectorMark`. Une légende est inclue sous le graphique.
+ Cette vue affiche un graphique représentant la proportion de challenges accomplis dans les différentes catégorie. Une légende est inclue sous le graphique.
+ 
+ `TrackingBalanceExtractedView` utilise un `Chart` avec `SectorMark`.
 
  - Auteur: Aurélien
  - Date: 04/06/2024
  */
 struct TrackingBalanceExtractedView: View {
-/// Les nombres de challenges accomplis par catégories à afficher dans le graphique.
+    /// Les nombres de challenges accomplis par catégories à afficher dans le graphique.
     @State private var balanceChallengeCatV = balanceChallengeCat
     
     var body: some View {
