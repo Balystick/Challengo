@@ -1,23 +1,23 @@
-//
-//  TrackingView.swift
-//  Challengo
-//
-//  Created by Aurélien on 04/06/2024.
-//
-
 import SwiftUI
-
+/**
+ Cette vue  affiche les informations de suivi segmentées en trois catégories : Calendrier, Balance et Win/Fail.
+ - Author: Aurélien
+ - Date: 04/06/2024
+ */
 struct TrackingView: View {
+    /// Variable d'état pour suivre le segment actuellement sélectionné dans le picker.
     @State private var segmentedSelection = 0
+    /// Variable d'état pour gérer la navigation vers la vue de démarrage.
     @State private var navigateToStartView = false
     
     var body: some View {
 
-        // Segmented section
+        // Section segmentée
         VStack {
             HStack {
                Button(action: {
-                   navigateToStartView = true // Action pour retourner à la vue précédente (StartView)
+                   // Action pour retourner à la vue précédente (StartView)
+                   navigateToStartView = true
                }) {
                    Image(systemName: "arrow.left")
                        .foregroundColor(Color.black)
@@ -25,6 +25,7 @@ struct TrackingView: View {
                }
                Spacer()
            }
+            // Picker pour sélectionner Calendrier, Balance et Win/Fail
             Picker("", selection: $segmentedSelection) {
                 Text("CALENDAR").tag(0)
                 Text("BALANCE").tag(1)
@@ -34,6 +35,7 @@ struct TrackingView: View {
             .colorMultiply(.raspberry)
             .padding(.bottom, 30)
             
+            // Affiche la vue correspondant au segment sélectionné
             switch segmentedSelection {
             case 0:
                 TrackingCalendarExtractedView()

@@ -1,59 +1,27 @@
-//
-//  TrackingWinFailExtractedView.swift
-//  Challengo
-//
-//  Created by Aurélien on 04/06/2024.
-//
-
 import SwiftUI
 import Charts
+/**
+ Cette vue affiche un graphique représentant le suivi des réussites et des échecs des challenges par mois.
 
+ `TrackingWinFailExtractedView` utilise un `Chart` pour montrer les réussites et les échecs des challenges avec `BarMark`. Une légende est inclue sous le graphique qui comporte également
+ Le graphique inclut des légendes en bas ainsi que pour chaque barre.
+
+ - Auteur: Aurélien
+ - Date: 04/06/2024
+ */
 struct TrackingWinFailExtractedView: View {
-    enum ChallengeType: String, CaseIterable {
-        case succeeded = "Challenges réussis"
-        case failed = "Challenges échoués"
-
-        var color: Color {
-            switch self {
-            case .succeeded:
-                return .green
-            case .failed:
-                return .red
-            }
-        }
-    }
-
-    struct ChallengeData: Identifiable {
-        let id: String = UUID().uuidString
-        let date: String
-        let month: Int
-        let challengeType: ChallengeType
-    }
-
-    private var challengeData: [ChallengeData] = [
-        .init(date: "Nov", month: 5, challengeType: .failed),
-        .init(date: "Nov", month: 20, challengeType: .succeeded),
-        .init(date: "Dec", month: 7, challengeType: .failed),
-        .init(date: "Dec", month: 23, challengeType: .succeeded),
-        .init(date: "Jan", month: 3, challengeType: .failed),
-        .init(date: "Jan", month: 17, challengeType: .succeeded),
-        .init(date: "Feb", month: 9, challengeType: .failed),
-        .init(date: "Feb", month: 15, challengeType: .succeeded),
-        .init(date: "Mar", month: 7, challengeType: .failed),
-        .init(date: "Mar", month: 19, challengeType: .succeeded),
-        .init(date: "Apr", month: 5, challengeType: .failed),
-        .init(date: "Apr", month: 21, challengeType: .succeeded),
-        .init(date: "May", month: 2, challengeType: .failed),
-        .init(date: "May", month: 27, challengeType: .succeeded)
-    ]
+    /// Les données de réussite/échec des challenges à afficher dans le graphique.
+    private var winFailChallengeDatasV = winFailChallengeDatas
 
     var body: some View {
-        Chart(challengeData) { item in
+        // BarMark pour afficher les données de réussite/échec par mois
+        Chart(winFailChallengeDatasV) { item in
             BarMark(
-                x: .value("Month", item.date),
-                y: .value("Number", item.month),
+                x: .value("Month", item.month),
+                y: .value("Number", item.number),
                 stacking: .standard
             )
+            // Annotation pour afficher le mois au-dessous de chaque barre
             .annotation(position: .overlay, content: {
                 VStack {
                     Text("\(item.month)")
@@ -62,12 +30,14 @@ struct TrackingWinFailExtractedView: View {
                     Spacer()
                 }
             })
-            .foregroundStyle(item.challengeType.color)
-            .foregroundStyle(by: .value("Nombre", item.challengeType.rawValue))
+            // Style de la barre selon le statut du challenge
+            .foregroundStyle(item.ChallengeStatus.color)
+            .foregroundStyle(by: .value("Nombre", item.ChallengeStatus.rawValue))
         }
+        // Ajoute une légende sous le graphique
         .chartLegend(position: .bottom, alignment: .leading, spacing: 24, content: {
             HStack(spacing: 6) {
-                ForEach(ChallengeType.allCases, id: \.self) { type in
+                ForEach(ChallengeStatus.allCases, id: \.self) { type in
                     Circle()
                         .fill(type.color)
                         .frame(width: 8, height: 8)
@@ -77,6 +47,7 @@ struct TrackingWinFailExtractedView: View {
                 }
             }
         })
+        // Personnalisation de l'axe Y du graphique
         .chartYAxis {
             AxisMarks(preset: .extended, position: .leading, values: .automatic(desiredCount: 31))
         }
