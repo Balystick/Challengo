@@ -13,25 +13,17 @@ struct TrackingWinFailExtractedView: View {
     private var winFailChallengeDatasV = winFailChallengeDatas
 
     var body: some View {
+//        Text(String(winFailChallengeDatas[0].ChallengeStatus.color))
         // BarMark pour afficher les données de réussite/échec par mois
-        Chart(winFailChallengeDatasV) { item in
+        Chart(winFailChallengeDatas) { item in
             BarMark(
                 x: .value("Month", item.month),
                 y: .value("Number", item.number),
                 stacking: .standard
             )
-            // Annotation pour afficher le mois au-dessous de chaque barre
-            .annotation(position: .overlay, content: {
-                VStack {
-                    Text("\(item.month)")
-                        .font(.system(size: 8, weight: .regular))
-                        .foregroundStyle(.black)
-                    Spacer()
-                }
-            })
             // Style de la barre selon le statut du challenge
-            .foregroundStyle(item.ChallengeStatus.color)
-            .foregroundStyle(by: .value("Nombre", item.ChallengeStatus.rawValue))
+            .foregroundStyle(item.challengeStatus.color)
+            .foregroundStyle(by: .value("Nombre", item.challengeStatus.rawValue))
         }
         // Ajoute une légende sous le graphique
         .chartLegend(position: .bottom, alignment: .leading, spacing: 24, content: {
