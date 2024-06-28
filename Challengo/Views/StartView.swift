@@ -7,12 +7,24 @@
 
 import SwiftUI
 
+/**
+`StartView` est la vue de démarrage de l'application qui offre plusieurs options de navigation et des interactions basées sur des gestes.
+Elle permet à l'utilisateur de naviguer vers différentes vues de l'application, comme la vue d'accueil, la vue du calendrier, la vue de la roue des défis et la vue de croissance de la nature.
+Elle utilise des gestes de glissement pour naviguer entre les vues.
+Elle contient des boutons pour accéder aux informations de l'application et au calendrier.
+*/
 struct StartView: View {
+    /// Etat qui détermine si la navigation vers `TrackingView` doit se produire.
     @State private var navigateToCalendarView = false
-    @State private var navigateToOnboardingView1 = false
+    /// Etat qui détermine si la navigation vers `OnboardingView` doit se produire.
+    @State private var navigateToOnboardingView = false
+    /// Etat qui détermine si la navigation vers `WheelView` doit se produire.
     @State private var navigateToWheelView = false
+    /// Etat qui détermine si la navigation vers `NatureGrowthView` doit se produire.
     @State private var navigateToNatureGrowthView = false
+    /// Variable d'état pour la catégorie sélectionnée.
     @State private var selectedCategory = -1
+    /// Variable d'état pour le nombre de défis.
     @State private var challengeNumber = 3
     
     var body: some View {
@@ -35,7 +47,7 @@ struct StartView: View {
             VStack {
                 HStack(spacing: 300){
                     Button(action: {
-                        navigateToOnboardingView1 = true
+                        navigateToOnboardingView = true
                     }, label: {
                         Image(systemName: "info.square")
                             .foregroundColor(Color.black)
@@ -83,8 +95,8 @@ struct StartView: View {
             .offset(x: 20, y: 230)
         }
         .navigationBarHidden(true)
-        .navigationDestination(isPresented: $navigateToOnboardingView1) {
-            OnboardingView1()
+        .navigationDestination(isPresented: $navigateToOnboardingView) {
+            OnboardingView()
                 .navigationBarBackButtonHidden(true)
         }
         .navigationDestination(isPresented: $navigateToCalendarView) {
