@@ -25,7 +25,8 @@ struct OnboardingView1: View {
             }
             .padding(.top, 50)
             Image("State 1")
-                .padding(.bottom, 15)
+                .offset(y: 0)
+                .padding(.bottom, 10)
             Text("Bienvenue sur")
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -33,12 +34,9 @@ struct OnboardingView1: View {
             Text("ChallenGo")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .padding(.bottom, 20)
-            JustifiedTextView(text: "Embarquez pour un voyage de croissance personnelle et de réussite. Avec des défis quotidiens conçus pour vous inspirer et vous motiver, ChallenGo vous aide à grandir, un pas à la fois.")
-                .padding(.horizontal, 30)
-                .frame(height: 120)
-            JustifiedTextView(text: "Commencez dès aujourd'hui votre chemin vers l'amélioration de soi !")
-                .padding(.horizontal, 30)
+            JustifiedTextView(text: "Embarquez pour un voyage de croissance personnelle et de réussite. Avec des défis  conçus pour vous inspirer et vous motiver, ChallenGo vous aide à grandir, un pas à la fois.")
+                // Commencez dès aujourd'hui un chemin de croissance ludique et plein de surprises !
+                .padding()
             Spacer()
             HStack(spacing: 200) {
                 Button(action: {

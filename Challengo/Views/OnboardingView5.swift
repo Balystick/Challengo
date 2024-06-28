@@ -22,22 +22,19 @@ struct OnboardingView5: View {
                         .frame(height: 400)
                         .offset(x: -80)
                         .rotationEffect(.degrees(-177.38))
-                    VStack {
                         Image("Onbording 5")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 280)
-                            .offset(y: -10)
-                        Image("State 5")
-                    }
                 }
-                Text("Prêt(e) à grandir?")
+            Image("State 5")
+                .offset(y: 0)
+                .padding(.bottom, 10)
+                Text("Prêt(e) à grandir ?")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .padding(.bottom, 20)
-                    .offset(y: -30)
-                JustifiedTextView(text: "Votre voyage vers un meilleur vous commence maintenant. Relevez le défi, grandissez chaque jour et regardez votre forêt et vous même prospérer. Commencez maintenant!")
-                    .padding(.horizontal, 30)
+                JustifiedTextView(text: "Votre aventure avec Challengo commence maintenant.\nRelevez le défi, grandissez chaque jour et voyez comment votre forêt et vous-même prospérez.")
+                    .padding()
                 Spacer()
                 HStack(spacing: 200) {
                     Button(action: {

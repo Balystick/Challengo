@@ -93,15 +93,11 @@ struct CarrouselView: View {
     ///Variable avec une liaison bidirectionnelle à un Booléen pour indiquer si un défi a été accepté par l'utilisateur.
     //Passage du challenge accepté à la vue mère
     @Binding var challengeAccepted: Bool
-    
-    ///Variable qui de l'index de la section sélectionnée dans les catégories de défis.
-    var selectedSection: Int?
-    
-    ///Variable avec une liaison bidirectionnelle à un entier qui représente le numéro du défi sélectionné
+
+    var selectedCategory: Int?
     @Binding var challengeNumber: Int
-    
-    ///Variable qui crée un tableau des catégories de challenges
-    var categories: [String] = ["Courage existentiel", "Ouverture à l'expérience et au changement", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
+    // Créer une classe si on a le temps
+    var categories: [String] = ["Courage existentiel", "Ouverture à l'expérience", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
 
     var body: some View {
      
@@ -118,11 +114,12 @@ struct CarrouselView: View {
                     .frame(alignment: .topTrailing)
 //                    .padding()
                     .font(.title)
-                    Text("Challenges \(categories[selectedSection ?? -1])")
+                    Text(categories[selectedCategory ?? -1])
                         .font(.title3)
-                        
                         .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                         .frame(height: 50)
+                        .padding(.bottom, 10)
 
                 }
                    }
@@ -157,16 +154,25 @@ struct CarrouselView: View {
                                 dismiss()
                             }, label: {
                                 Text("Choisir")
-                                    .font(.footnote)
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 60)
-                                    .padding(.horizontal, 20.0)
+                                    .font(.callout)
+                                    .frame(width: 70)
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
                                     .foregroundColor(.black)
-                                    .background(Color(red: 0.77, green: 0.76, blue: 0.761))
-                                    .cornerRadius(20)
-                                    .border(.red)
+                                    .background(Color(.colorGrey))
+                                    .cornerRadius(30)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.red, lineWidth: 1)
+                                    )
                             })
-                                Spacer()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color(.colorRose))
+                                    .foregroundColor(Color(.colorGrey))
+                            )
+                                                        
+                            Spacer()
                      
                             }.opacity(1.0 - abs(distance(item.id)) * 1 )
                            
@@ -240,9 +246,9 @@ struct CarrouselView: View {
 // Ajustement Preview
 struct CarrouselView_Previews: PreviewProvider {
     @State static var challengeAccepted = true
-    @State static var selectedSection = 3
+    @State static var selectedCategory = 3
     @State static var challengeNumber = 3
     static var previews: some View {
-        CarrouselView(challengeAccepted: $challengeAccepted, selectedSection: selectedSection, challengeNumber: $challengeNumber)
+        CarrouselView(challengeAccepted: $challengeAccepted, selectedCategory: selectedCategory, challengeNumber: $challengeNumber)
     }
 }
