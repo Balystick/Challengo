@@ -17,6 +17,7 @@
 		E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1C2C0E01E4006CA138 /* utils.swift */; };
 		E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222B432C0F124F004F3E5E /* WheelView.swift */; };
 		E129909D2C2C1C5300219E51 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129909C2C2C1C5300219E51 /* Tracking.swift */; };
+		E14681632C2EFC3100F9908B /* TrackingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14681622C2EFC3100F9908B /* TrackingData.swift */; };
 		E1CFBC712C2D51DC00102FF2 /* NatureGrowth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFBC702C2D51DC00102FF2 /* NatureGrowth.swift */; };
 		E1ECCF802C0F57A400FAE9D7 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */; };
 		E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */; };
@@ -39,11 +40,10 @@
 		E10109992C0DF07B002FF84B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E101099D2C0DF07C002FF84B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10109A02C0DF07C002FF84B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E10109A62C0DF07C002FF84B /* ChallengoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E10109B02C0DF07C002FF84B /* ChallengoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11F7C1C2C0E01E4006CA138 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		E1222B432C0F124F004F3E5E /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		E129909C2C2C1C5300219E51 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		E14681622C2EFC3100F9908B /* TrackingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingData.swift; sourceTree = "<group>"; };
 		E1CFBC702C2D51DC00102FF2 /* NatureGrowth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureGrowth.swift; sourceTree = "<group>"; };
 		E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingBalanceExtractedView.swift; sourceTree = "<group>"; };
@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F368D52C2CAEB800341F38 /* OnboardingData.swift */,
+				E14681622C2EFC3100F9908B /* TrackingData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -236,30 +237,12 @@
 				E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */,
 				F6F368CD2C2C169400341F38 /* OnboardingModel.swift in Sources */,
 				F6F367D62C11B33700341F38 /* JustifiedTextView.swift in Sources */,
+				E14681632C2EFC3100F9908B /* TrackingData.swift in Sources */,
 				F6F368D62C2CAEB800341F38 /* OnboardingData.swift in Sources */,
 				E1CFBC712C2D51DC00102FF2 /* NatureGrowth.swift in Sources */,
-				F6F367DA2C11B39700341F38 /* OnboardingView3.swift in Sources */,
 				E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */,
 				E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */,
 				F6F368D42C2CACF800341F38 /* OnboardingView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10109A22C0DF07C002FF84B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10109AC2C0DF07C002FF84B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F6F367D82C11B36800341F38 /* OnboardingView2.swift in Sources */,
-				F6F367DC2C11B3C800341F38 /* OnboardingView4.swift in Sources */,
-				F6F367D42C11B2FD00341F38 /* OnboardingView1.swift in Sources */,
-				F6F367DE2C11B3ED00341F38 /* OnboardingView5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
