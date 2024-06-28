@@ -68,7 +68,7 @@ struct WheelView: View {
             }
         }
         .navigationDestination(isPresented: $challengeAccepted) {
-            NatureGrowthView(selectedSection: selectedSection, challengeNumber: $challengeNumber)
+            NatureGrowthView(challengeNumber: $challengeNumber)
                 .navigationBarBackButtonHidden(true)
         }
     }

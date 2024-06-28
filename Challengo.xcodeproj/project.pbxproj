@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741A205B2C2D8F5B00DF2745 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A205A2C2D8F5B00DF2745 /* RectangleView.swift */; };
 		742263162C0F15CF009AC256 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263152C0F15CF009AC256 /* CongratsView.swift */; };
 		742263182C0F15F1009AC256 /* CarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263172C0F15F1009AC256 /* CarrouselView.swift */; };
 		7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742263192C0F1612009AC256 /* AcceptedChallengeView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		741A205A2C2D8F5B00DF2745 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		742263152C0F15CF009AC256 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
 		742263172C0F15F1009AC256 /* CarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselView.swift; sourceTree = "<group>"; };
 		742263192C0F1612009AC256 /* AcceptedChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedChallengeView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				E10109992C0DF07B002FF84B /* ContentView.swift */,
 				F6F367D12C11B23E00341F38 /* StartView.swift */,
 				E1222B432C0F124F004F3E5E /* WheelView.swift */,
+				741A205A2C2D8F5B00DF2745 /* RectangleView.swift */,
 				742263172C0F15F1009AC256 /* CarrouselView.swift */,
 				742263192C0F1612009AC256 /* AcceptedChallengeView.swift */,
 				742263152C0F15CF009AC256 /* CongratsView.swift */,
@@ -318,6 +321,7 @@
 				742263162C0F15CF009AC256 /* CongratsView.swift in Sources */,
 				F6F367D22C11B23E00341F38 /* StartView.swift in Sources */,
 				E101099A2C0DF07B002FF84B /* ContentView.swift in Sources */,
+				741A205B2C2D8F5B00DF2745 /* RectangleView.swift in Sources */,
 				7422631A2C0F1612009AC256 /* AcceptedChallengeView.swift in Sources */,
 				E10109982C0DF07B002FF84B /* ChallengoApp.swift in Sources */,
 				E1ECCF8C2C10653700FAE9D7 /* NatureGrowthView.swift in Sources */,

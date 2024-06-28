@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-
+/**
+ La structure CongratsView est une vue de l'univers affichant un message de félicitation affichant et l'image de l'arbre à planter
+ */
 struct CongratsView: View {
     var body: some View {
         ZStack {

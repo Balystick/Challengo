@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
-
+/**
+ La Structure AcceptedChallengeView est une view qui affiche les détails du challenge accepté
+ */
 struct AcceptedChallengeView: View {
+    ///Le numéro du challenge accepté
     @Binding var challengeNumber: Int
+    /// Instantiation d'un objet de la Class Challenge
     let challenge = Challenge()
 
     var body: some View {
@@ -18,51 +22,18 @@ struct AcceptedChallengeView: View {
                     .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 
-                    ZStack {
                     VStack {
-//                        Text(challenge.items[challengeNumber-1].description)
-                        Spacer()
-                        RoundedRectangle(cornerRadius: 30.0)
-                            .fill(.red)
-                            .opacity(0.7)
-                            .cornerRadius(2.0)
-                            .frame(width: 200.0, height: 220.0)
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        }
-                    VStack {
-                        Spacer()
-                        Spacer()
-                            Text("Challenge \(challengeNumber)")
-                            .font(.headline)
-                            Spacer()
-                            Text("Prendre une douche froide").font(.footnote)
-                            Spacer()
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        RectangleView(numeroChallenge: challengeNumber, shortDescription: "Prendre une douche froide")
+                            .offset(y: -200)
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                                 Text("Accompli")
                                     .font(.footnote)
                                     .padding(7)
                             })
                             .foregroundColor(.black)
                             .background(Color(red: 0.77, green: 0.76, blue: 0.761))
-                            .cornerRadius(20)
-                            
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        }
+                            .cornerRadius(20)    
+                            .offset(y: -250)
                     }
             }
             .navigationBarBackButtonHidden(true)

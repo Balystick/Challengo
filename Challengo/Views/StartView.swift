@@ -84,10 +84,10 @@ struct StartView: View {
                 WheelView()
                 .navigationBarBackButtonHidden(true)
             }
-            .navigationDestination(isPresented: $navigateToNatureGrowthView) {
-                NatureGrowthView(selectedSection: -1, challengeNumber: StartView.$challengeNumber)
-            }
-            .navigationBarHidden(true)
+//            .navigationDestination(isPresented: $navigateToNatureGrowthView) {
+//                NatureGrowthView(selectedSection: -1, challengeNumber: StartView.$challengeNumber)
+//            }
+//            .navigationBarHidden(true)
         }
     }
 
