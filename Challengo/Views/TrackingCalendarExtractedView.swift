@@ -7,16 +7,23 @@
 
 import SwiftUI
 
+/// Cette vue représente un calendrier de suivi des défis avec la possibilité de naviguer entre les mois.
+///
+/// Cette vue affiche les jours du mois courant ainsi que les jours de défis réussis et non réussis.
 struct TrackingCalendarExtractedView: View {
+    /// L'année actuellement affichée dans le calendrier.
     @State private var currentYear: Int = 2024
+    /// Le mois actuellement affiché dans le calendrier.
     @State private var currentMonth: Int = 6
-
+    
+    /// Les dates des défis réussis.
     let successfulChallenges: [Date] = [
         getDate(year: 2024, month: 6, day: 1),
         getDate(year: 2024, month: 6, day: 5),
         getDate(year: 2024, month: 6, day: 6)
     ]
-    
+
+    /// Les dates des défis échoués
     let unsuccessfulChallenges: [Date] = [
         getDate(year: 2024, month: 5, day: 28),
         getDate(year: 2024, month: 5, day: 31),
@@ -24,7 +31,7 @@ struct TrackingCalendarExtractedView: View {
     ]
     
     var body: some View {
-        VStack {
+         VStack {
             VStack {
                 HStack {
                     Button(action: {
@@ -76,7 +83,7 @@ struct TrackingCalendarExtractedView: View {
         }
         .padding()
     }
-    
+    /// Retourne le nom du mois actuel.
     var monthName: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
@@ -84,6 +91,12 @@ struct TrackingCalendarExtractedView: View {
         return dateFormatter.string(from: date)
     }
     
+    /// Retourne tous les jours du mois avec les jours de la semaine précédents ajoutés pour compléter la première semaine.
+    ///
+    /// - Parameters:
+    ///   - year: L'année du mois à récupérer.
+    ///   - month: Le mois à récupérer.
+    /// - Returns: Une liste de dates avec les jours précédents ajoutés pour compléter la première semaine.
     func getAllDaysWithPadding(year: Int, month: Int) -> [Date] {
         var dates: [Date] = []
         let calendar = Calendar.current
@@ -113,6 +126,7 @@ struct TrackingCalendarExtractedView: View {
         return dates
     }
     
+    /// Passe au mois précédent dans le calendrier.
     func previousMonth() {
         if currentMonth == 1 {
             currentMonth = 12
@@ -122,6 +136,7 @@ struct TrackingCalendarExtractedView: View {
         }
     }
     
+    /// Passe au mois suivant dans le calendrier.
     func nextMonth() {
         if currentMonth == 12 {
             currentMonth = 1
@@ -131,6 +146,13 @@ struct TrackingCalendarExtractedView: View {
         }
     }
     
+    /// Crée une date à partir des paramètres spécifiés.
+    ///
+    /// - Parameters:
+    ///   - year: L'année de la date.
+    ///   - month: Le mois de la date.
+    ///   - day: Le jour de la date.
+    /// - Returns: Une instance de `Date` correspondant aux paramètres.
     static func getDate(year: Int, month: Int, day: Int) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -138,6 +160,14 @@ struct TrackingCalendarExtractedView: View {
     }
 }
 
+/// Une vue représentant un jour dans le calendrier.
+///
+/// Cette vue affiche un jour avec différentes couleurs de fond et de texte en fonction des défis réussis ou non réussis.
+///
+/// - Parameters:
+///   - date: La date à afficher.
+///   - successfulChallenges: Les dates des défis réussis.
+///   - unsuccessfulChallenges: Les dates des défis non réussis.
 struct CalendarDayView: View {
     let date: Date
     let successfulChallenges: [Date]
@@ -161,6 +191,12 @@ struct CalendarDayView: View {
                 }
             }
     
+    /// Retourne la couleur de fond pour une date donnée.
+    ///
+    /// - Parameters:
+    ///   - date: La date à vérifier.
+    ///   - isToday: Booléen indiquant si la date est aujourd'hui.
+    /// - Returns: La couleur de fond appropriée.
     func backgroundColor(for date: Date, isToday: Bool) -> Color {
         if isToday {
             return Color.colorGreenLight
@@ -173,6 +209,13 @@ struct CalendarDayView: View {
         }
     }
     
+    /// Retourne la couleur de texte pour une date donnée.
+    ///
+    /// - Parameters:
+    ///   - date: La date à vérifier.
+    ///   - isCurrentMonth: Booléen indiquant si la date appartient au mois actuel.
+    ///   - isToday: Booléen indiquant si la date est aujourd'hui.
+    /// - Returns: La couleur de texte appropriée.
     func foregroundColor(for date: Date, isCurrentMonth: Bool, isToday: Bool) -> Color {
         if isToday {
             return Color.black

@@ -1,80 +1,35 @@
-//
-//  NatureGrowthView.swift
-//  Challengo
-//
-//  Created by Aurélien on 05/06/2024.
-//
-//
-
 import SwiftUI
 
-// Modèle d'item avec id, position et image
-struct NatureItem: Identifiable {
-    let id = UUID()
-    var position: CGSize
-    var imageName: String
-}
-
+/**
+ Cette vue affiche l'univers virtuel et le challenge en cours.
+ Si le challenge est réussi, cette vue permet de placer le nouvel élément gagné dans l'univers virtuel.
+ 
+ - Auteur: Aurélien
+ - Date: 04/06/2024
+ */
 struct NatureGrowthView: View {
-    // Créer une classe si on a le temps
-    var categories: [String] = ["Courage existentiel", "Ouverture à l”expérience", "Compassion pour soi", "Joker", "Autonomie", "Conscience de soi", "Compassion pour les autres", "Responsabilité de soi"]
+    /// Liste de catégories de challenges.
+    var categories = natureGrowthCategories
+    /// Index de la catégorie sélectionnée.
     var selectedCategory: Int?
+    /// Numéro du défi en cours.
     @Binding var challengeNumber: Int
+    /// Instance de la classe Challenge
     let challenge = Challenge()
-    // Retour à la vue de départ
+    /// Booléen indiquant s'il faut retourner à la vue de départ.
     @State private var navigateToStartView = false
-    // Drag'n drop nouvel item
+    /// Position du nouvel élément draggable.
     @State var offset: CGSize = CGSize(width: 0, height: -50)
+    /// Position de départ du nouvel élément draggable.
     @State private var startLocation: CGSize = .zero
-    // Logique d'affichage
+    /// Booléen indiquant si le défi est réussi.
     @State private var isCompleted = false
+    /// Booléen indiquant si le défi est échoué.
     @State private var isFailed = false
+    /// Booléen indiquant si les félicitations ont été affichées.
     @State private var isCongratulated = false
-    // Texte bande-dessinée
-    @State private var displayedText: String = ""
-    @State private var index: Int = 0
-    @State private var timer: Timer?
-    // Collection d'items gagnés précédemment
-    @State private var items: [NatureItem] = [
-        //Ciel
-        NatureItem(position: CGSize(width: 50, height: 50), imageName: "sun1"),
-        NatureItem(position: CGSize(width: 100, height: 100), imageName: "nuage1"),
-        NatureItem(position: CGSize(width: 150, height: 250), imageName: "nuage5"),
-        NatureItem(position: CGSize(width: 200, height: 140), imageName: "nuage2"),
-        NatureItem(position: CGSize(width: 250, height: 300), imageName: "nuage3"),
-        NatureItem(position: CGSize(width: 300, height: 300), imageName: "nuage3"),
-        NatureItem(position: CGSize(width: 350, height: 250), imageName: "nuage1"),
-        
-        //Arbres
-        NatureItem(position: CGSize(width: 50, height: 750), imageName: "arbre1"),
-        NatureItem(position: CGSize(width: 60, height: 750), imageName: "arbre1"),
-        NatureItem(position: CGSize(width: 75, height: 750), imageName: "arbre1"),
-        NatureItem(position: CGSize(width: 60, height: 740), imageName: "arbre1"),
-        NatureItem(position: CGSize(width: 150, height: 550), imageName: "arbre5"),
-        NatureItem(position: CGSize(width: 230, height: 550), imageName: "arbre5"),
-        NatureItem(position: CGSize(width: 70, height: 550), imageName: "arbre5"),
-        NatureItem(position: CGSize(width: 80, height: 500), imageName: "arbre5"),
-        NatureItem(position: CGSize(width: 60, height: 500), imageName: "arbre5"),
-        NatureItem(position: CGSize(width: 120, height: 570), imageName: "arbre5"),
-        
-        //Fleurs
-        NatureItem(position: CGSize(width: 350, height: 750), imageName: "buisson1"),
-        NatureItem(position: CGSize(width: 300, height: 750), imageName: "buisson3"),
-        NatureItem(position: CGSize(width: 320, height: 770), imageName: "buisson3"),
-        
-        //Autres
-        NatureItem(position: CGSize(width: 350, height: 550), imageName: "lac1"),
-        NatureItem(position: CGSize(width: 300, height: 650), imageName: "cascade"),
-        NatureItem(position: CGSize(width: 220, height: 770), imageName: "pierres"),
-        NatureItem(position: CGSize(width: 180, height: 640), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 190, height: 640), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 200, height: 640), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 180, height: 640), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 180, height: 680), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 172, height: 660), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 170, height: 700), imageName: "lavande"),
-        NatureItem(position: CGSize(width: 0, height: -80), imageName: "tmp") // Ajout du nouvel élément gagné
-    ]
+    /// Collection d'items gagnés précédemment et placés dans l'univers virtuel.
+    @State private var items = natureGrowthItems
     
     var body: some View {
         ZStack {
@@ -86,12 +41,11 @@ struct NatureGrowthView: View {
             // Affichage des items gagnés précédemment
             ForEach(items) { item in
                 if !items.isEmpty && item.id != items[items.count-1].id {
-                    Image(item.imageName)
+                    item.image
                         .resizable()
                         .frame(width: 50, height: 50)
                         .position(x: item.position.width, y: item.position.height)
                 }
-                
                 
                 // Affichage du Challenge en cours
                 if !isCompleted && !isFailed && selectedCategory != -1 {
@@ -146,7 +100,6 @@ struct NatureGrowthView: View {
                 }
                 
                 // Affichage des félicitations
-                
                 if isCompleted && !isCongratulated {
                     Text("Félicitations !\n\nTu as brillamment relevé ce défi.\n\nPlace ton nouvel élément et savoure\nta réussite !")
                         .font(.callout)
@@ -209,6 +162,7 @@ struct NatureGrowthView: View {
                                     items[items.count-1].position = self.offset
                                 }
                         )
+                    
                     // Affichage du bouton de validation placement item
                     VStack {
                         Spacer()

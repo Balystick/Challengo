@@ -1,32 +1,21 @@
-//
-//  TrackingBalanceExtractedView.swift
-//  Challengo
-//
-//  Created by Aurélien on 04/06/2024.
-//
-
 import SwiftUI
 import Charts
 
-struct Category: Identifiable {
-    let id = UUID()
-    let title: String
-    let number: Int
-}
+/**
+ Cette vue affiche un graphique représentant la proportion de challenges accomplis dans les différentes catégorie. Une légende est inclue sous le graphique.
+ 
+ `TrackingBalanceExtractedView` utilise un `Chart` avec `SectorMark`.
 
+ - Auteur: Aurélien
+ - Date: 04/06/2024
+ */
 struct TrackingBalanceExtractedView: View {
-    @State private var category: [Category] = [
-        .init(title: "Courage existentiel", number: 53),
-        .init(title: "Ouverture à l”expérience et au changement          ", number: 37),
-        .init(title: "Compassion pour soi", number: 28),
-        .init(title: "Autonomie", number: 9),
-        .init(title: "Conscience de soi", number: 17),
-        .init(title: "Compassion pour les autres", number: 13),
-        .init(title: "Responsabilité de soi", number: 23),
-    ]
+    /// Les nombres de challenges accomplis par catégories à afficher dans le graphique.
+    @State private var balanceChallengeCatV = balanceChallengeCat
     
     var body: some View {
-        Chart(category) { Category in
+        // Affiche un graphique en secteurs montrant les challenges accomplis par catégorie
+        Chart(balanceChallengeCatV) { Category in
             SectorMark(
                 angle: .value(
                     Text(verbatim: Category.title),
@@ -34,7 +23,6 @@ struct TrackingBalanceExtractedView: View {
                 ),
                 innerRadius: .ratio(0.6),
                 angularInset: 2
-                
             )
             .foregroundStyle(
                 by: .value(
@@ -43,7 +31,9 @@ struct TrackingBalanceExtractedView: View {
                 )
             )
         }
+        // Ajoute une légende sous le graphique
         .chartLegend(position: .bottom, alignment: .center)
+        // Ajoute un arrière-plan au graphique avec du texte au centre
         .chartBackground { chartProxy in
             GeometryReader { geometry in
                 if let anchor = chartProxy.plotFrame {

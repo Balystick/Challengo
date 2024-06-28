@@ -16,6 +16,8 @@
 		E10109A12C0DF07C002FF84B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10109A02C0DF07C002FF84B /* Preview Assets.xcassets */; };
 		E11F7C1D2C0E01E4006CA138 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F7C1C2C0E01E4006CA138 /* utils.swift */; };
 		E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222B432C0F124F004F3E5E /* WheelView.swift */; };
+		E129909D2C2C1C5300219E51 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129909C2C2C1C5300219E51 /* Tracking.swift */; };
+		E1CFBC712C2D51DC00102FF2 /* NatureGrowth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFBC702C2D51DC00102FF2 /* NatureGrowth.swift */; };
 		E1ECCF802C0F57A400FAE9D7 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */; };
 		E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */; };
 		E1ECCF862C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */; };
@@ -27,23 +29,6 @@
 		F6F368D42C2CACF800341F38 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F368D32C2CACF800341F38 /* OnboardingView.swift */; };
 		F6F368D62C2CAEB800341F38 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F368D52C2CAEB800341F38 /* OnboardingData.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E10109A72C0DF07C002FF84B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E101098C2C0DF07B002FF84B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E10109932C0DF07B002FF84B;
-			remoteInfo = Challengo;
-		};
-		E10109B12C0DF07C002FF84B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E101098C2C0DF07B002FF84B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E10109932C0DF07B002FF84B;
-			remoteInfo = Challengo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		742263152C0F15CF009AC256 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
@@ -58,6 +43,8 @@
 		E10109B02C0DF07C002FF84B /* ChallengoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11F7C1C2C0E01E4006CA138 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		E1222B432C0F124F004F3E5E /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		E129909C2C2C1C5300219E51 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		E1CFBC702C2D51DC00102FF2 /* NatureGrowth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureGrowth.swift; sourceTree = "<group>"; };
 		E1ECCF7F2C0F57A400FAE9D7 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		E1ECCF832C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingBalanceExtractedView.swift; sourceTree = "<group>"; };
 		E1ECCF852C0F5AED00FAE9D7 /* TrackingCalendarExtractedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingCalendarExtractedView.swift; sourceTree = "<group>"; };
@@ -72,20 +59,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E10109912C0DF07B002FF84B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10109A32C0DF07C002FF84B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10109AD2C0DF07C002FF84B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				E10109942C0DF07B002FF84B /* Challengo.app */,
-				E10109A62C0DF07C002FF84B /* ChallengoTests.xctest */,
-				E10109B02C0DF07C002FF84B /* ChallengoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				F6F368CC2C2C169400341F38 /* OnboardingModel.swift */,
+				E1CFBC702C2D51DC00102FF2 /* NatureGrowth.swift */,
+				E129909C2C2C1C5300219E51 /* Tracking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,42 +172,6 @@
 			productReference = E10109942C0DF07B002FF84B /* Challengo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E10109A52C0DF07C002FF84B /* ChallengoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E10109BD2C0DF07C002FF84B /* Build configuration list for PBXNativeTarget "ChallengoTests" */;
-			buildPhases = (
-				E10109A22C0DF07C002FF84B /* Sources */,
-				E10109A32C0DF07C002FF84B /* Frameworks */,
-				E10109A42C0DF07C002FF84B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E10109A82C0DF07C002FF84B /* PBXTargetDependency */,
-			);
-			name = ChallengoTests;
-			productName = ChallengoTests;
-			productReference = E10109A62C0DF07C002FF84B /* ChallengoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E10109AF2C0DF07C002FF84B /* ChallengoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E10109C02C0DF07C002FF84B /* Build configuration list for PBXNativeTarget "ChallengoUITests" */;
-			buildPhases = (
-				E10109AC2C0DF07C002FF84B /* Sources */,
-				E10109AD2C0DF07C002FF84B /* Frameworks */,
-				E10109AE2C0DF07C002FF84B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E10109B22C0DF07C002FF84B /* PBXTargetDependency */,
-			);
-			name = ChallengoUITests;
-			productName = ChallengoUITests;
-			productReference = E10109B02C0DF07C002FF84B /* ChallengoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,14 +184,6 @@
 				TargetAttributes = {
 					E10109932C0DF07B002FF84B = {
 						CreatedOnToolsVersion = 15.4;
-					};
-					E10109A52C0DF07C002FF84B = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = E10109932C0DF07B002FF84B;
-					};
-					E10109AF2C0DF07C002FF84B = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = E10109932C0DF07B002FF84B;
 					};
 				};
 			};
@@ -272,8 +201,6 @@
 			projectRoot = "";
 			targets = (
 				E10109932C0DF07B002FF84B /* Challengo */,
-				E10109A52C0DF07C002FF84B /* ChallengoTests */,
-				E10109AF2C0DF07C002FF84B /* ChallengoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,20 +215,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E10109A42C0DF07C002FF84B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10109AE2C0DF07C002FF84B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -309,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E129909D2C2C1C5300219E51 /* Tracking.swift in Sources */,
 				742263182C0F15F1009AC256 /* CarrouselView.swift in Sources */,
 				E1ECCF802C0F57A400FAE9D7 /* TrackingView.swift in Sources */,
 				E1222B442C0F124F004F3E5E /* WheelView.swift in Sources */,
@@ -323,6 +237,8 @@
 				F6F368CD2C2C169400341F38 /* OnboardingModel.swift in Sources */,
 				F6F367D62C11B33700341F38 /* JustifiedTextView.swift in Sources */,
 				F6F368D62C2CAEB800341F38 /* OnboardingData.swift in Sources */,
+				E1CFBC712C2D51DC00102FF2 /* NatureGrowth.swift in Sources */,
+				F6F367DA2C11B39700341F38 /* OnboardingView3.swift in Sources */,
 				E1ECCF882C0F5B0C00FAE9D7 /* TrackingWinFailExtractedView.swift in Sources */,
 				E1ECCF842C0F5ACC00FAE9D7 /* TrackingBalanceExtractedView.swift in Sources */,
 				F6F368D42C2CACF800341F38 /* OnboardingView.swift in Sources */,
@@ -340,23 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F367D82C11B36800341F38 /* OnboardingView2.swift in Sources */,
+				F6F367DC2C11B3C800341F38 /* OnboardingView4.swift in Sources */,
+				F6F367D42C11B2FD00341F38 /* OnboardingView1.swift in Sources */,
+				F6F367DE2C11B3ED00341F38 /* OnboardingView5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E10109A82C0DF07C002FF84B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E10109932C0DF07B002FF84B /* Challengo */;
-			targetProxy = E10109A72C0DF07C002FF84B /* PBXContainerItemProxy */;
-		};
-		E10109B22C0DF07C002FF84B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E10109932C0DF07B002FF84B /* Challengo */;
-			targetProxy = E10109B12C0DF07C002FF84B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E10109B82C0DF07C002FF84B /* Debug */ = {
@@ -536,82 +443,6 @@
 			};
 			name = Release;
 		};
-		E10109BE2C0DF07C002FF84B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 746GA298QV;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.balystick.ChallengoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Challengo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Challengo";
-			};
-			name = Debug;
-		};
-		E10109BF2C0DF07C002FF84B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 746GA298QV;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.balystick.ChallengoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Challengo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Challengo";
-			};
-			name = Release;
-		};
-		E10109C12C0DF07C002FF84B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 746GA298QV;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.balystick.ChallengoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Challengo;
-			};
-			name = Debug;
-		};
-		E10109C22C0DF07C002FF84B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 746GA298QV;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.balystick.ChallengoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Challengo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -629,24 +460,6 @@
 			buildConfigurations = (
 				E10109BB2C0DF07C002FF84B /* Debug */,
 				E10109BC2C0DF07C002FF84B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E10109BD2C0DF07C002FF84B /* Build configuration list for PBXNativeTarget "ChallengoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E10109BE2C0DF07C002FF84B /* Debug */,
-				E10109BF2C0DF07C002FF84B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E10109C02C0DF07C002FF84B /* Build configuration list for PBXNativeTarget "ChallengoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E10109C12C0DF07C002FF84B /* Debug */,
-				E10109C22C0DF07C002FF84B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
